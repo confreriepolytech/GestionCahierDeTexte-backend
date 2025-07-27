@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
 
     #'accounts',
-    'ues',
+    #'ues',
 
 ]
 
@@ -57,7 +57,16 @@ REST_FRAMEWORK = {
     ),
 } #authentification
 
+SPECTACULAR_SETTINGS = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ],
 
+    'TITLE': 'Gestion cahier de texte API',
+    'DESCRIPTION': "THis API purposes is the  gestion of text book 'cahier de texte' in our university EPL",
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False
+}
 # Configure JWT settings
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),  # Token expires in 1 day

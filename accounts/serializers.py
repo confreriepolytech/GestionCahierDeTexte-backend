@@ -14,10 +14,10 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from CahierDeTexte.models import Classe
+
 from GestionCahierDeTexte import settings
 from accounts import google
-from accounts.models import Professeur, SecretaireGeneral, SecretaireClasse
+from accounts.models import Professeur, SecretaireGeneral, SecretaireClasse, Classe
 from accounts.register import register_social_user
 from accounts.utils import Util
 
@@ -94,12 +94,12 @@ class UserRegistrationSerializer(serializers.Serializer):
         # Create role-specific instance
         if role == 'secretaire_general':
 
-            SecretaireGeneral.objects.create(user=user,
+            SecretaireGeneral.objects.create(user_id=user,
                                              departement=departement)
 
         elif role == 'professeur':
 
-            Professeur.objects.create(user=user,
+            Professeur.objects.create(user_id=user,
                                       signature=signature)
 
 
@@ -346,7 +346,7 @@ class SetNewPasswordSerializer(serializers.Serializer):
 
 class BaseUserSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ['id', 'nom', 'prenom', 'email']  # Champs communs aux users
+        fields = ['user_id', 'nom', 'prenom','role', 'email']  # Champs communs aux users
 
 class SecretaireGeneralSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
@@ -361,4 +361,4 @@ class SecretaireClasseSerializer(BaseUserSerializer):
 class ProfesseurSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
         model = Professeur
-        fields = ['id_prof', 'nom', 'prenom', 'email','signature']
+        ields = BaseUserSerializer.Meta.fields + ['signature']

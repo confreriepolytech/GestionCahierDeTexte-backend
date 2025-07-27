@@ -1,7 +1,17 @@
 
 from rest_framework import serializers # Carlos tu te rappelle de ce dont je te parlait la derniere fois la c'est sa qui se repete ici de mme que dans ton serializer de accounts
-from .models import Cahiertexte, Seance, Classe
-from accounts.models import SecretaireClasse
+
+from accounts.models import Seance, Cahiertexte, SecretaireClasse, Fichier_Ue, Ue, Classe
+
+
+#from .models import Cahiertexte, Seance
+#from accounts.models import SecretaireClasse, Classe
+#from .models import Ue, Fichier_Ue
+
+
+
+
+
 
 
 class SeanceSerializer(serializers.ModelSerializer):
@@ -31,3 +41,47 @@ def validate(self, data):
     raise serializers.ValidationError("Un cahier de texte pour cette classe et ce secrétaire existe déjà.")
 
   return data
+
+
+
+
+#ues serializer
+
+
+
+class UeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ue
+        fields = '__all__'
+
+
+class ClasseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Classe
+        fields = '__all__'
+
+
+class FichierUeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Fichier_Ue
+        fields = '__all__'
+
+
+
+
+class HTMLUploadSerializer(serializers.Serializer):
+    file = serializers.FileField(required=True)
+
+    def validate_file(self, value):
+        # Vérifier que le fichier a bien une extension .html
+        if not value.name.endswith('.html'):
+            raise serializers.ValidationError("Le fichier doit être au format HTML.")
+        return value
+
+
+
+
+
+
+
+

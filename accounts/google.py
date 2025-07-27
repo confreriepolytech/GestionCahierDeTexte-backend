@@ -8,7 +8,7 @@ class Google:
 
     @staticmethod
     def validate(auth_token):
-        """ validate  method queries the google auth2 api to fecth the user info """
+        """ validate  method queries the Google auth2 api to fetch the user info """
 
         try:
             idinfo = id_token.verify_oauth2_token(

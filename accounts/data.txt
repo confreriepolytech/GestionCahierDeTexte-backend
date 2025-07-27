@@ -1,0 +1,463 @@
+
+1
+2GEL1625 - Utilisation de l’automate programmable
+(LF GE S6)
+GNAGLIGA
+1
+2GEC1621 - Justification des sections des ouvrages
+(LF GC S6)
+AYITE
+1
+1GEC1225 - Introduction aux propriétés physiques et mécaniques des sol
+(LP GC S2)
+BANAKINAO
+1
+MGT1420 - Initiation à la vie Professionnelle
+(LP GE S4)
+SABOUTOU
+1
+MTH1222/MTH1220 - Structure Algébrique de base
+(LP GL S2 et LP SR S2 et LF TC S2)
+MAGNANI
+1
+ANG1220 - Anglais : Lire et Ecrire
+(LP GE S2 et LP GC S2 et LP GM S2)
+MIHAM
+1
+MTH1421 - Statistiques inférentielles (décisionnelles)
+(LF TC S4)
+DAKITSE-BENISSAN
+1
+INF1427 - Informatique Industrielle : Mise en œuvre des microprocesseurs
+(LP GE S4)
+KODJO
+1
+GEM1428 - Fabrication mécanique et procédés de montage
+(LP GM S4)
+AGBETOSSOU
+1
+INF1426 - Développement d’applications de bureau
+(LP GL S4)
+HOETOWOU
+1
+MTH1224 - Calcul intégral et Applications
+(LP GL S2 et LP SR S2)
+TCHALLA
+1
+ANG1420 - Anglais de spécialité : Approche thématique des textes, compréhension orale et écrite
+(LF TC S4)
+TCHIOU et MIHAM
+1
+1GEC1427 - Conception géométrique
+(LP GC S4)
+KOUTO
+1
+2GEL1221 - Etude d’Equipement et Câblage
+(LP GE S2)
+ADJAMAGBO
+1
+GEM1222 - Construction mécanique : organes de transmission de mouvement
+(LP GM S2)
+DROVOU
+1
+1MTH1121 - Calcul différentiel dans IR
+(LF TC S2)
+GERALDO
+1
+1GEL1221 - Mesure et Essais
+(LP GE S2)
+AGBESSI
+1
+GEM1223 - Bureau des méthodes
+(LP GM S2)
+AGBETOSSOU
+1
+INF1429 - Normes documentaires
+(LP GL S4)
+ANAKPA
+1
+INF1428 - Architecture et fonctionnement des réseaux Informatiques
+(LF IA S4 et LF IS S4 et LF LT S4)
+KPEGOUNI
+1
+2GEC1422 - Résistance des Matériaux pour GC
+(LF GC S4)
+AYITE
+1
+GEM1420 - Notion de RDM pour ingénieur GE
+(LF GE S4)
+AFIO
+1
+INF1225 - Généralités sur les Réseaux
+(LP GL S2)
+KPEGOUNI
+Salle 35/36
+1
+1INF1422 - Généralités sur les réseaux Informatiques
+(LP SR S4)
+KPEGOUNI
+1
+INF1221 - Programmation Python
+(LF TC S2)
+AMOUZOU
+1
+2GEC1458 - Elements de contrôle de chantier
+(LP GC S4)
+AMOUDJI
+1
+INF1426 - Introduction à l’algorithme, à la Programmation et aux bases de Données
+(LP GE S4)
+APALOO-BARA
+1
+INF1220 - Structure de données et programmation C
+(LF TC S2)
+AMOUZOU et AKAKPO
+1
+1GEC1425 - Thermique du bâtiment
+(LP GC S4)
+SAMAH
+1
+INF1627 - Initiation à l’ingénierie des Systèmes d’Information
+(LP GL S6)
+BATAZI
+1
+1INF1223 - Architecture Matérielle
+(LP SR S2)
+TOSSOU AUDE
+1
+MTH1420 - Calcul différentiel dans Rn
+(LF TC S4)
+LAKMON et AGOSSEME
+1
+GEL1428 - Introduction à l’Electronique de Puissance
+(LP GE S4)
+AGBOSSOU
+1
+2INF1621 - Atelier de réseau
+(LP SR S6)
+1
+BARATE
+1
+1GEM1220 - Géométrie descriptive
+(LF TC S2)
+LIMAZIE
+1
+2GEL1421 - Commande des Machines par la Pratique
+(LP GE S4)
+ADJAMAGBO
+1
+GEM1421 - Asservissement et régulation
+(LP GM S4)
+GOGOLI
+1
+1INF1621/INF1628 - Administration des réseaux Informatiques
+(LP SR S6 et LP GL S6)
+TEPE
+1
+FRA1220 - Techniques de communication écrites
+(LF TC S2)
+KALIPE
+1
+FRA1220 - Français : Lire et Ecrire
+(LP GE S2 et LP GM S2 et LP GC S2)
+KALIPE
+1
+GEL1629 - Traitement du Signal
+(LF GE S6)
+BOKOVI
+1
+GEM1622 - Maintenance industrielle
+(LF GM S6)
+WOTODZO
+1
+1GEC1622 - Hydrologie de Bases
+(LF GC S6)
+IDRISSOU
+1
+1INF1220/INF1225 - Informatique de base pour technicien supérieur (*)
+(LP GC S2 et LP GE S2 et LP GM S2)
+AGBESSI
+1
+INF1425 - Généralités sur la sécurité informatique
+(LP GL S4)
+BARATE
+1
+1INF1620 - Généralités sur la Sécurité Informatique
+(LP SR S6)
+BARATE
+1
+PHY1220 - Mécanique du solide
+(LF TC S2)
+AYELEH
+1
+1GEC1458 - Organisation et planification de chantier
+(LP GC S4)
+KOUTO
+1
+GEL1422 - Automates Programmables par la Pratique
+(LP GE S4)
+KODJO
+1
+2INF1226 - Programmation web statique
+(LP GL S2 et LP SR S2)
+ATADEGNON
+1
+DRT1420 - Droit: droit du travail et droit de l'informatique
+(LF IA S4 et LF IS S4 et LF LT S4)
+KUAGBENU
+1
+GEL1421 - Physiques pour l'Ingénieur : Electrotechnique - Magnétisme - Machines - Réseaux
+(LF GM S4)
+MOUZOU
+1
+GEL1620 - Asservissement et Régulation des Systèmes Linéaire
+(LF GE S6)
+KODJO
+1
+DRT1420 - Droit de l’Informatique
+(LP GL S4 et LP SR S4)
+KUAGBENU
+1
+GEL1429 - Installations électriques (H)
+(LF GC S4)
+GUENOUKPATI
+1
+GEL1422 - Physiques pour l'ingénieur : Electrostatique - Electrocinétique - Electromagnétisme
+(LF GM S4)
+MOUZOU
+1
+INF1621 - Administration Système Linux
+(LF IA S6+LF IS S6)
+MESSI
+1
+1GEL1622 - Electrostatique et Electrocinétique
+(LF GE S6)
+AGBESSI
+1
+1GEM1221 - Fabrication mécanique : les machines-outils
+(LP GM S2)
+AGBETOSSOU
+1
+1GEL1420 - Bases de l'électronique
+(LF GE S4)
+KPOGLI
+1
+GEL1420 - Introduction à l'électronique et montage des circuits électroniques
+(LF GM S4)
+AKORO
+1
+GEM1422 - Métallurgie et essai des matériaux
+(LP GM S4)
+MOUZOU
+1
+1INF1226 - Programmation C
+(LP GL S2 et LP SR S2)
+AKAKPO
+1
+ANG1221 - Anglais : compréhension orale et écrite
+(LF TC S2)
+TCHIOU et MIHAM
+1
+ANG1420/ANG1421 - Anglais de Spécialité : Approche thématique des textes
+(LP GE S4 et LP GC S4 et LP GM S4)
+AGOUZE
+1
+INF1220 - Eléments mathématiques sur les bases de données
+(LP GL S2)
+DAMALI
+1
+1INF1420 - Généralités sur les stockages de l'information
+(LP SR S4)
+AGBOSSE et FIADJOE
+1
+GEL1423 - Physique des Capteurs : Notions fondamentales
+(LF GM S4)
+GUENOUKPATI
+1
+1GEC1621 - Béton armé : Calcul des sollicitations
+(LF GC S6)
+AYITE
+1
+PHY1227 - Mécanique Appliquée au Solide
+(LP GE S2)
+ATTIPOU
+1
+1MTH1422 - Analyse numérique
+(LF TC S4)
+AYELEH
+1
+2GEC1424 - Justification des sections
+(LP GC S4)
+AMEY
+1
+1GEL1421 - Introduction à l’Asservissement et Régulation
+(LP GE S4)
+GUENOUKPATI
+1
+GEM1429 - Construction mécanique : organes de transmission de puissance
+(LP GM S4)
+DROVOU
+1
+GEC1423 - Hydraulique des bases
+(LF GC S4)
+IDRISSOU
+1
+1GEM1621 - Etude de fabrication assistée par ordinateur
+(LF GM S6)
+WOTODZO
+1
+2INF1620 - Sécurité des réseaux informatiques
+(LP SR S6)
+ADJONYO
+1
+MTH1423 - Théorie des graphes
+(LF TC S4)
+AGOSSEME
+1
+1GEC1424 - Introduction aux calculs de sollicitations
+(LP GC S4)
+AMEY
+1
+1GEM1220 - Essai des mécanismes
+(LP GM S2)
+DROVOU
+1
+1GEL1221 - Circuits Logiques combinatoires
+(LP GL S2 et LP SR S2)
+ASSIDENU
+1
+INF1622 - Programmation distribuée pour le stockage et le calcul
+(LF IA S6)
+TIASSOU et AFANOU
+1
+1GEL1625 - Automate Programmable Industriel (API)
+(LF GE S6)
+DITONA et GNAGLIGA
+1
+1INF1423 - Administration Système Linux
+(LP GL S4 et LP SR S4)
+TEPE
+1
+1GEL1623 - Machines Electriques : Constitution et Principe de
+Fonctionnement
+(LF GE S6)
+1
+BOKOVI
+1
+GEC1624 - Construction métallique : notions de bases et technologie
+(LF GC S6)
+AMEY
+1
+1GEC1226 - Matériaux de construction des ouvrages de génie civil
+(LP GC S2)
+BANAKINAO
+1
+PHY1225 - Introduction à la Physique des capteurs
+(LP GE S2)
+GUENOUKPATI
+1
+GEL1627 - Electroniques : Fonctions et Systèmes
+(LF GE S6)
+ADJALLAH
+1
+GEM1626 - Thermodynamique avancée
+(LF GM S6)
+AYELEH et ESSEY
+1
+1GEC1620 - Routes : Conception Géométrique
+(LF GC S6)
+GBAFA
+1
+2INF1220/2INF1225/INF1226 - Introduction à la programmation
+(LP GM S2 et LP GE S2 et LP GC S2)
+AYELEH
+1
+INF1428 - Modélisation  UML
+(LP GL S4)
+HOETOWOU
+1
+MTH1620 - Statistiques exploratoires multidimensionnelles
+(LF IA S6)
+TAMPANGO et POTOKOYE
+1
+INF1625 - Développement d'applications distribuées
+(LF IS S6)
+ABOLO-SEWOVI
+1
+GEM1624 - Montage d'usinage
+(LF GM S6)
+AGBETOSSOU
+1
+MTH1225/MTH1220 - Eléments d'Analyse Mathématique
+(LP GE S2 et LP GC S2 et LP GM S2)
+TCHARIE
+1
+CPT1420 - Comptabilité Générale de base
+(LP GL S4 et LP SR S4)
+LAWSON-BODY
+1
+INF1623 - Initiation à l'ingénierie des Systèmes d'Information
+(LF IS S6)
+ZOMBLEOU
+1
+2GEC1427 - Structure de chaussée, matériaux et entretien
+(LP GC S4)
+BANAKINAO
+1
+GEL1425 - Maintenance des Appareils Audio Visuels (MAAV)
+(LP GE S4)
+OTTOU
+1
+2GEL1221 - Circuits Logiques Séquentiels
+(LP SR S2 et LP GL S2)
+ASSIDENU
+1
+ANG1620 - Anglais
+(LF IA S6 et LF IS S6 et LF LT S6)
+MIHAM
+1
+2GEL1622 -  Electromagnétisme
+(LF GE S6)
+GUENOUKPATI
+Amphi A
+1
+ANG1620 - Anglais de spécialité pour le mécanicien
+(LF GM S6)
+1
+MIHAM
+1
+INF1624 - Développement d'applications de bureau
+(LF IS S6)
+ZOMBLEOU
+1
+1GEL1626 - Convertisseurs statiques
+(LF GE S6)
+AGBOSSOU
+1
+2GEC1625 - Assainissement : notions de bases et technologie
+(LF GC S6)
+GBAFA
+1
+GEM1420 - Organisation et méthodes de la maintenance
+(LP GM S4)
+DROVOU
+1
+MTH1621 - Data Mining
+(LF IA S6)
+AGBEMADON et BASSA
+1
+GEL1624 - Système de Maintenance
+(LF GE S6)
+ADJALLAH
+1
+1GEM1627 - Fabrication mécanique : Tournage et Fraisage
+(LF GM S6)
+AFIO et ESSEY et NTSOUAGLO
+1
+INF1620 - Administration de bases de données
+(LF IA S6+LF IS S6)
+ANAKPA
+1
+GEM1620 - Métallurgie
+(LF GM S6)
+MOUZOU

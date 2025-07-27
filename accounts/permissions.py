@@ -5,7 +5,7 @@ class IsCustomAdmin(permissions.BasePermission):
     """Permission personnalisée pour vérifier si un utilisateur est admin selon le champ 'role'."""
 
     def has_permission(self, request, view):
-        return request.user.user.is_authenticated and request.user.user.role == 'admin'
+        return request.user.is_authenticated and request.user.role == 'admin'
 
 
 
@@ -14,7 +14,7 @@ class IsOwnerOrAdmin(permissions.BasePermission):
     """Autorise l'accès uniquement si l'utilisateur est lui-même ou un admin."""
 
     def has_object_permission(self, request, view, obj):
-        return request.user.user.is_authenticated and (request.user == obj or request.user.role == "admin")
+        return request.user.is_authenticated and (request.user == obj or request.user.role == "admin")
 
 
 

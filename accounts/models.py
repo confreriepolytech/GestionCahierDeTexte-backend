@@ -20,6 +20,8 @@ class CustomUserManager(BaseUserManager):
 
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault('is_verified', True)
+        extra_fields.setdefault('role', 'admin')
         return self.create_user(email, password, **extra_fields)
 
 
@@ -33,9 +35,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 
     email = models.EmailField(unique=True, db_index=True)
-    nom = models.CharField(max_length=150, blank=True)
-    prenom = models.CharField(max_length=150, blank=True)
-    role = models.CharField(max_length=23, choices=ROLE_CHOICES, blank=True, db_index=True)
+    nom = models.CharField(max_length=150, blank=False, null=False)
+    prenom = models.CharField(max_length=150, blank=False, null=False)
+    role = models.CharField(max_length=23, choices=ROLE_CHOICES, blank=False, null=False, db_index=True)
+
     auth_provider = models.CharField(max_length=10, default=AUTH_PROVIDERS.get('email'))
     is_active = models.BooleanField(default=True, db_index=True)
     is_staff = models.BooleanField(default=False, db_index=True)
@@ -70,8 +73,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 
 class SecretaireGeneral(models.Model):
-    user = models.OneToOneField("accounts.CustomUser", on_delete=models.CASCADE, db_index=True)
-    departement = models.CharField(max_length=100)
+    user_id = models.OneToOneField("accounts.CustomUser", on_delete=models.CASCADE, db_index=True)
+    departement = models.CharField(choices=[('Génie_Civil','Génie Civil'),
+                                            ('Génie_Electrique','Génie Electrique'),
+                                            ('Génie_Mécanique','Génie Mécanique'),
+                                            ('Génie_Informatique','Génie Informatique')],max_length=100, blank=False, null=False)
 
     class Meta:
         #managed = False
@@ -80,7 +86,7 @@ class SecretaireGeneral(models.Model):
 
 
 class Professeur(models.Model):
-    user = models.OneToOneField("accounts.CustomUser", on_delete=models.CASCADE, db_index=True)
+    user_id = models.OneToOneField("accounts.CustomUser", on_delete=models.CASCADE, db_index=True)
     signature = models.ImageField(upload_to='signatures/', blank=True, null=True)
 
     @property
@@ -90,14 +96,167 @@ class Professeur(models.Model):
 
     class Meta:
         #managed = False
+        verbose_name = 'professeur'
+        verbose_name_plural = 'professeurs'
+        ordering = []
         db_table = 'professeur'
 
 
-class SecretaireClasse(models.Model):
-    user = models.OneToOneField("accounts.CustomUser", on_delete=models.CASCADE, db_index=True)
-    id_classe = models.ForeignKey("CahierDeTexte.classe", models.DO_NOTHING, db_column='id_classe', blank=True, null=True)
 
+
+
+
+class Classe(models.Model):
+    id_classe = models.AutoField(primary_key=True)
+    nom_licence = models.CharField(max_length=100, blank=False, null=False)
+    niveau = models.CharField(max_length=50, blank=False, null=False)
+    departement = models.CharField(choices = [('GC','Génie Civil'),
+                                            ('GE','Génie Electrique'),
+                                            ('GM','Génie Mécanique'),
+                                            ('GI','Génie Informatique'),
+                                            ('TC','Tronc Commun')
+                                    ],
+                                        max_length=100, blank=False, null=False)
+    mention = models.CharField(max_length=23,
+                               choices=[('LF', 'Licence Fondamentale'),
+                                        ('LP', 'Licence Professionelle')],
+                               blank=False, null=False)
+    class Meta:
+        #managed = False
+        verbose_name = 'classe'
+        verbose_name_plural = 'classes'
+        db_table = 'classe'
+
+    def __str__(self):
+        return self.nom_licence
+
+
+
+class SecretaireClasse(models.Model):
+    user_id = models.OneToOneField("accounts.CustomUser", on_delete=models.CASCADE, db_index=True)
+    #id_classe = models.ForeignKey("accounts.Classe", on_delete=models.SET_NULL, db_column='id_classe', blank=True, null=True)
+    id_classe = models.ForeignKey("accounts.Classe", on_delete=models.SET_NULL, db_column='id_classe', blank=True,
+                                  null=True)
     class Meta:
         #managed = False
         db_table = 'secretaireclasse'
+
+
+
+
+
+
+#-------------------------------------cahier de texte-----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Seance(models.Model):
+    id_seance = models.AutoField(primary_key=True)
+    id_professeur = models.ForeignKey("accounts.Professeur", on_delete=models.CASCADE, db_column='id_professeur', blank=True, null=True)
+    #id_ues = models.ForeignKey('CahierDeTexte.Ue', on_delete=models.CASCADE, db_column='id_UEs', blank=True, null=True)  # Field name made lowercase.
+    sous_session_seance = models.CharField(max_length=1000,blank=False, null=False)
+    id_classe = models.ForeignKey("accounts.classe", on_delete=models.CASCADE, db_column='id_classe', blank=True, null=True)
+    id_ues = models.ForeignKey("accounts.Ue", on_delete=models.CASCADE, db_column='id_UEs')
+    date_heure = models.DateTimeField(null=False, blank=False, db_index=True)
+
+    class Meta:
+        #managed = False
+        db_table = 'seance'
+
+class Cahiertexte(models.Model):
+    id_cahier = models.AutoField(primary_key=True)
+    id_classe = models.ForeignKey("accounts.Classe", on_delete=models.CASCADE, db_column='id_classe')
+    id_secretaire = models.ForeignKey("accounts.SecretaireClasse", on_delete=models.CASCADE, db_column='id_secretaire')
+
+    date_de_creation = models.DateTimeField(auto_now_add=True)# la date de creation
+    date_de_mise_a_jour = models.DateTimeField(auto_now=True)# date de mise a jour
+
+    class Meta:
+        db_table = 'Cahiertexte'
+        #managed = False
+        verbose_name = 'Cahiertexte'
+        verbose_name_plural = 'Cahiertextes'
+        ordering = ['-date_de_creation']
+
+    def __str__(self):
+        return f"Cahier {self.id_cahier} - Classe {self.id_classe}"
+
+class Validation(models.Model):
+
+    STATUS_CHOICES = [('valide', 'validé'),
+                      ('non_valide', 'non validé')]
+    id_validation = models.AutoField(primary_key=True)
+    id_cahier = models.ForeignKey(Cahiertexte, on_delete=models.CASCADE, db_column='id_cahier')
+    id_professeur = models.ForeignKey("accounts.Professeur", on_delete=models.CASCADE, db_column='id_professeur',)
+    #id_ues = models.ForeignKey("CahierDeTexte.Ue", on_delete=models.CASCADE, db_column='id_UEs')  # Field name made lowercase.
+    id_ues = models.ForeignKey("accounts.Ue", on_delete=models.CASCADE, db_column='id_UEs')
+    statut = models.CharField(max_length=11 , choices=STATUS_CHOICES, blank=False, null=False, db_index=True)
+    id_seance = models.ForeignKey(Seance, on_delete=models.CASCADE, db_column='id_seance',)
+    date_validation = models.DateTimeField(null=False, blank=False)
+    #signature = models.ImageField(upload_to='validations/',blank=True, null=True)
+
+    class Meta:
+        #managed = False
+        db_table = 'validation'
+
+
+
+
+
+
+
+#ues models
+
+
+
+class Ue(models.Model):
+    id_UEs = models.AutoField(primary_key=True)
+    code_UEs = models.CharField(max_length=50, unique=True, db_index=True)
+    intitule_UEs = models.CharField(max_length=255)
+    id_prof = models.ForeignKey("accounts.Professeur", on_delete=models.SET_NULL, db_column='id_prof', null=True)  # Assure la correspondance avec la colonne SQL
+
+    crenaux =  models.JSONField(default=dict)
+    #classe = models.ForeignKey("CahierDeTexte.Classe", on_delete=models.SET_NULL,null=True)
+    classe = models.ForeignKey("accounts.Classe", on_delete=models.SET_NULL, null=True)
+
+
+
+    class Meta:
+        # managed = False
+
+        verbose_name = 'UE'
+        verbose_name_plural = 'UEs'
+        ordering = ['-classe']
+        db_table = 'UEs'  # Correspond au nom exact de la table dans MySQL
+
+    def __str__(self):
+        return f"{self.code_UEs} - {self.intitule_UEs}- {self.classe}"
+
+
+class Fichier_Ue(models.Model):
+    id_Fichiers_Ue = models.AutoField(primary_key=True)
+    #id_UEs = models.ForeignKey("CahierDeTexte.Ue", on_delete=models.CASCADE, db_column='id_UEs')
+    id_UEs = models.ForeignKey("accounts.Ue", on_delete=models.CASCADE, db_column='id_UEs')
+    lien_fichier = models.FileField(upload_to='fichiers_ue/')
+
+    class Meta:
+        #managed = False
+
+        ordering = ['-id_UEs']
+        db_table = 'Fichiers_Ue'
+
+    def __str__(self):
+        return self.lien_fichier
+
 

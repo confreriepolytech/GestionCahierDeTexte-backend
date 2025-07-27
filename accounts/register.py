@@ -11,7 +11,7 @@ User = get_user_model()
 
 def register_social_user(provider , user_id, email , name):
 
-    #i decided to not allow user register with their Google  account , the only thing they can do is sign up with this , so maybe i should rename this after
+    #I decided  not to  allow user register with their Google  account , the only thing they can do is sign up with this , so maybe i should rename this after
     # lot things to change here
 
     filtered_user_by_email = User.objects.filter(email=email)

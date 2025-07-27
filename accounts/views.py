@@ -138,7 +138,7 @@ class LoginView(views.APIView):
 class LogoutView(generics.GenericAPIView):
     """ logout view , required user is authenticated """
 
-    permission_classes = (IsAuthenticated,)
+    #permission_classes = (IsAuthenticated,)
     serializer_class = LogoutSerializer
 
 
@@ -178,7 +178,7 @@ class RequestPasswordReset(generics.GenericAPIView):
         absurl = 'http://' + current_site + relative_link  # http will be change in https later
 
         # Send email
-        email_body = f"Hi {user.username} use this lnk below to reset your password /n {absurl}"
+        email_body = f"Hi {user.username} use this link below to reset your password /n {absurl}"
         email_information = {'email_body': email_body, 'to_email': user.email, 'email_subject': 'reset your password'}
         Util.send_mail(email_information)
 

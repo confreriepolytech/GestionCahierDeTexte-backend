@@ -1,0 +1,3432 @@
+[
+    {
+        "ue_code": "2GEL1625",
+        "ue_intitule": "Utilisation de l’automate programmable",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_0@gmail.com",
+                "nom": "GNAGLIGA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEC1621",
+        "ue_intitule": "Justification des sections des ouvrages",
+        "classe": [
+            {
+                "nom_licence": "GC_S6",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_1@gmail.com",
+                "nom": "AYITE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1225",
+        "ue_intitule": "Introduction aux propriétés physiques et mécaniques des sol",
+        "classe": [
+            {
+                "nom_licence": "GC_S2",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_2@gmail.com",
+                "nom": "BANAKINAO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MGT1420",
+        "ue_intitule": "Initiation à la vie Professionnelle",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_3@gmail.com",
+                "nom": "SABOUTOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MTH1222/MTH1220",
+        "ue_intitule": "Structure Algébrique de base",
+        "classe": [
+            {
+                "nom_licence": "GL_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "SR_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "TC_S2",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_4@gmail.com",
+                "nom": "MAGNANI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "ANG1220",
+        "ue_intitule": "Anglais : Lire et Ecrire",
+        "classe": [
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GC_S2",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_5@gmail.com",
+                "nom": "MIHAM",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MTH1421",
+        "ue_intitule": "Statistiques inférentielles (décisionnelles)",
+        "classe": [
+            {
+                "nom_licence": "TC_S4",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_6@gmail.com",
+                "nom": "DAKITSE-BENISSAN",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1427",
+        "ue_intitule": "Informatique Industrielle : Mise en œuvre des microprocesseurs",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_7@gmail.com",
+                "nom": "KODJO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1428",
+        "ue_intitule": "Fabrication mécanique et procédés de montage",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_8@gmail.com",
+                "nom": "AGBETOSSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1426",
+        "ue_intitule": "Développement d’applications de bureau",
+        "classe": [
+            {
+                "nom_licence": "GL_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_9@gmail.com",
+                "nom": "HOETOWOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MTH1224",
+        "ue_intitule": "Calcul intégral et Applications",
+        "classe": [
+            {
+                "nom_licence": "GL_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "SR_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_10@gmail.com",
+                "nom": "TCHALLA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "ANG1420",
+        "ue_intitule": "Anglais de spécialité : Approche thématique des textes, compréhension orale et écrite",
+        "classe": [
+            {
+                "nom_licence": "TC_S4",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_11@gmail.com",
+                "nom": "TCHIOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_11@gmail.com",
+                "nom": "MIHAM",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1427",
+        "ue_intitule": "Conception géométrique",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_12@gmail.com",
+                "nom": "KOUTO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEL1221",
+        "ue_intitule": "Etude d’Equipement et Câblage",
+        "classe": [
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_13@gmail.com",
+                "nom": "ADJAMAGBO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1222",
+        "ue_intitule": "Construction mécanique : organes de transmission de mouvement",
+        "classe": [
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_14@gmail.com",
+                "nom": "DROVOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1MTH1121",
+        "ue_intitule": "Calcul différentiel dans IR",
+        "classe": [
+            {
+                "nom_licence": "TC_S2",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_15@gmail.com",
+                "nom": "GERALDO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEL1221",
+        "ue_intitule": "Mesure et Essais",
+        "classe": [
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_16@gmail.com",
+                "nom": "AGBESSI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1223",
+        "ue_intitule": "Bureau des méthodes",
+        "classe": [
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_17@gmail.com",
+                "nom": "AGBETOSSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1429",
+        "ue_intitule": "Normes documentaires",
+        "classe": [
+            {
+                "nom_licence": "GL_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_18@gmail.com",
+                "nom": "ANAKPA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1428",
+        "ue_intitule": "Architecture et fonctionnement des réseaux Informatiques",
+        "classe": [
+            {
+                "nom_licence": "IA_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            },
+            {
+                "nom_licence": "IS_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            },
+            {
+                "nom_licence": "LT_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_19@gmail.com",
+                "nom": "KPEGOUNI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEC1422",
+        "ue_intitule": "Résistance des Matériaux pour GC",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_20@gmail.com",
+                "nom": "AYITE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1420",
+        "ue_intitule": "Notion de RDM pour ingénieur GE",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_21@gmail.com",
+                "nom": "AFIO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1225",
+        "ue_intitule": "Généralités sur les Réseaux",
+        "classe": [
+            {
+                "nom_licence": "GL_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_22@gmail.com",
+                "nom": "KPEGOUNI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1INF1422",
+        "ue_intitule": "Généralités sur les réseaux Informatiques",
+        "classe": [
+            {
+                "nom_licence": "SR_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_23@gmail.com",
+                "nom": "KPEGOUNI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1221",
+        "ue_intitule": "Programmation Python",
+        "classe": [
+            {
+                "nom_licence": "TC_S2",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_24@gmail.com",
+                "nom": "AMOUZOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEC1458",
+        "ue_intitule": "Elements de contrôle de chantier",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_25@gmail.com",
+                "nom": "AMOUDJI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1426",
+        "ue_intitule": "Introduction à l’algorithme, à la Programmation et aux bases de Données",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_26@gmail.com",
+                "nom": "APALOO-BARA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1220",
+        "ue_intitule": "Structure de données et programmation C",
+        "classe": [
+            {
+                "nom_licence": "TC_S2",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_27@gmail.com",
+                "nom": "AMOUZOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_27@gmail.com",
+                "nom": "AKAKPO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1425",
+        "ue_intitule": "Thermique du bâtiment",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_28@gmail.com",
+                "nom": "SAMAH",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1627",
+        "ue_intitule": "Initiation à l’ingénierie des Systèmes d’Information",
+        "classe": [
+            {
+                "nom_licence": "GL_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_29@gmail.com",
+                "nom": "BATAZI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1INF1223",
+        "ue_intitule": "Architecture Matérielle",
+        "classe": [
+            {
+                "nom_licence": "SR_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_30@gmail.com",
+                "nom": "TOSSOU AUDE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MTH1420",
+        "ue_intitule": "Calcul différentiel dans Rn",
+        "classe": [
+            {
+                "nom_licence": "TC_S4",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_31@gmail.com",
+                "nom": "LAKMON",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_31@gmail.com",
+                "nom": "AGOSSEME",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1428",
+        "ue_intitule": "Introduction à l’Electronique de Puissance",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_32@gmail.com",
+                "nom": "AGBOSSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEM1220",
+        "ue_intitule": "Géométrie descriptive",
+        "classe": [
+            {
+                "nom_licence": "TC_S2",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_33@gmail.com",
+                "nom": "LIMAZIE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEL1421",
+        "ue_intitule": "Commande des Machines par la Pratique",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_34@gmail.com",
+                "nom": "ADJAMAGBO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1421",
+        "ue_intitule": "Asservissement et régulation",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_35@gmail.com",
+                "nom": "GOGOLI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1INF1621/INF1628",
+        "ue_intitule": "Administration des réseaux Informatiques",
+        "classe": [
+            {
+                "nom_licence": "SR_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GL_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_36@gmail.com",
+                "nom": "TEPE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "FRA1220",
+        "ue_intitule": "Techniques de communication écrites",
+        "classe": [
+            {
+                "nom_licence": "TC_S2",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_37@gmail.com",
+                "nom": "KALIPE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "FRA1220",
+        "ue_intitule": "Français : Lire et Ecrire",
+        "classe": [
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GC_S2",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_38@gmail.com",
+                "nom": "KALIPE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1629",
+        "ue_intitule": "Traitement du Signal",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_39@gmail.com",
+                "nom": "BOKOVI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1622",
+        "ue_intitule": "Maintenance industrielle",
+        "classe": [
+            {
+                "nom_licence": "GM_S6",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_40@gmail.com",
+                "nom": "WOTODZO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1622",
+        "ue_intitule": "Hydrologie de Bases",
+        "classe": [
+            {
+                "nom_licence": "GC_S6",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_41@gmail.com",
+                "nom": "IDRISSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1INF1220/INF1225",
+        "ue_intitule": "Informatique de base pour technicien supérieur (*)",
+        "classe": [
+            {
+                "nom_licence": "GC_S2",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_42@gmail.com",
+                "nom": "AGBESSI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1425",
+        "ue_intitule": "Généralités sur la sécurité informatique",
+        "classe": [
+            {
+                "nom_licence": "GL_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_43@gmail.com",
+                "nom": "BARATE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1INF1620",
+        "ue_intitule": "Généralités sur la Sécurité Informatique",
+        "classe": [
+            {
+                "nom_licence": "SR_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_44@gmail.com",
+                "nom": "BARATE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "PHY1220",
+        "ue_intitule": "Mécanique du solide",
+        "classe": [
+            {
+                "nom_licence": "TC_S2",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_45@gmail.com",
+                "nom": "AYELEH",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1458",
+        "ue_intitule": "Organisation et planification de chantier",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_46@gmail.com",
+                "nom": "KOUTO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1422",
+        "ue_intitule": "Automates Programmables par la Pratique",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_47@gmail.com",
+                "nom": "KODJO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2INF1226",
+        "ue_intitule": "Programmation web statique",
+        "classe": [
+            {
+                "nom_licence": "GL_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "SR_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_48@gmail.com",
+                "nom": "ATADEGNON",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "DRT1420",
+        "ue_intitule": "Droit: droit du travail et droit de l'informatique",
+        "classe": [
+            {
+                "nom_licence": "IA_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            },
+            {
+                "nom_licence": "IS_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            },
+            {
+                "nom_licence": "LT_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_49@gmail.com",
+                "nom": "KUAGBENU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1421",
+        "ue_intitule": "Réseaux",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_50@gmail.com",
+                "nom": "MOUZOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1620",
+        "ue_intitule": "Asservissement et Régulation des Systèmes Linéaire",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_51@gmail.com",
+                "nom": "KODJO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "DRT1420",
+        "ue_intitule": "Droit de l’Informatique",
+        "classe": [
+            {
+                "nom_licence": "GL_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "SR_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_52@gmail.com",
+                "nom": "KUAGBENU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1429",
+        "ue_intitule": "Installations électriques (H)",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_53@gmail.com",
+                "nom": "GUENOUKPATI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1422",
+        "ue_intitule": "Electromagnétisme",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_54@gmail.com",
+                "nom": "MOUZOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1621",
+        "ue_intitule": "Administration Système Linux",
+        "classe": [
+            {
+                "nom_licence": "IA_S",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            },
+            {
+                "nom_licence": "IS_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_55@gmail.com",
+                "nom": "MESSI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEL1622",
+        "ue_intitule": "Electrostatique et Electrocinétique",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_56@gmail.com",
+                "nom": "AGBESSI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEM1221",
+        "ue_intitule": "outils",
+        "classe": [
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_57@gmail.com",
+                "nom": "AGBETOSSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEL1420",
+        "ue_intitule": "Bases de l'électronique",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_58@gmail.com",
+                "nom": "KPOGLI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1420",
+        "ue_intitule": "Introduction à l'électronique et montage des circuits électroniques",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_59@gmail.com",
+                "nom": "AKORO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1422",
+        "ue_intitule": "Métallurgie et essai des matériaux",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_60@gmail.com",
+                "nom": "MOUZOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1INF1226",
+        "ue_intitule": "Programmation C",
+        "classe": [
+            {
+                "nom_licence": "GL_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "SR_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_61@gmail.com",
+                "nom": "AKAKPO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "ANG1221",
+        "ue_intitule": "Anglais : compréhension orale et écrite",
+        "classe": [
+            {
+                "nom_licence": "TC_S2",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_62@gmail.com",
+                "nom": "TCHIOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_62@gmail.com",
+                "nom": "MIHAM",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "ANG1420/ANG1421",
+        "ue_intitule": "Anglais de Spécialité : Approche thématique des textes",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_63@gmail.com",
+                "nom": "AGOUZE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1220",
+        "ue_intitule": "Eléments mathématiques sur les bases de données",
+        "classe": [
+            {
+                "nom_licence": "GL_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_64@gmail.com",
+                "nom": "DAMALI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1INF1420",
+        "ue_intitule": "Généralités sur les stockages de l'information",
+        "classe": [
+            {
+                "nom_licence": "SR_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_65@gmail.com",
+                "nom": "AGBOSSE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_65@gmail.com",
+                "nom": "FIADJOE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1423",
+        "ue_intitule": "Physique des Capteurs : Notions fondamentales",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_66@gmail.com",
+                "nom": "GUENOUKPATI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1621",
+        "ue_intitule": "Béton armé : Calcul des sollicitations",
+        "classe": [
+            {
+                "nom_licence": "GC_S6",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_67@gmail.com",
+                "nom": "AYITE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "PHY1227",
+        "ue_intitule": "Mécanique Appliquée au Solide",
+        "classe": [
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_68@gmail.com",
+                "nom": "ATTIPOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1MTH1422",
+        "ue_intitule": "Analyse numérique",
+        "classe": [
+            {
+                "nom_licence": "TC_S4",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_69@gmail.com",
+                "nom": "AYELEH",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEC1424",
+        "ue_intitule": "Justification des sections",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_70@gmail.com",
+                "nom": "AMEY",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEL1421",
+        "ue_intitule": "Introduction à l’Asservissement et Régulation",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_71@gmail.com",
+                "nom": "GUENOUKPATI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1429",
+        "ue_intitule": "Construction mécanique : organes de transmission de puissance",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_72@gmail.com",
+                "nom": "DROVOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEC1423",
+        "ue_intitule": "Hydraulique des bases",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_73@gmail.com",
+                "nom": "IDRISSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEM1621",
+        "ue_intitule": "Etude de fabrication assistée par ordinateur",
+        "classe": [
+            {
+                "nom_licence": "GM_S6",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_74@gmail.com",
+                "nom": "WOTODZO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2INF1620",
+        "ue_intitule": "Sécurité des réseaux informatiques",
+        "classe": [
+            {
+                "nom_licence": "SR_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_75@gmail.com",
+                "nom": "ADJONYO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MTH1423",
+        "ue_intitule": "Théorie des graphes",
+        "classe": [
+            {
+                "nom_licence": "TC_S4",
+                "niveau": "Licence",
+                "departement": "TC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_76@gmail.com",
+                "nom": "AGOSSEME",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1424",
+        "ue_intitule": "Introduction aux calculs de sollicitations",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_77@gmail.com",
+                "nom": "AMEY",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEM1220",
+        "ue_intitule": "Essai des mécanismes",
+        "classe": [
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_78@gmail.com",
+                "nom": "DROVOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEL1221",
+        "ue_intitule": "Circuits Logiques combinatoires",
+        "classe": [
+            {
+                "nom_licence": "GL_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "SR_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_79@gmail.com",
+                "nom": "ASSIDENU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1622",
+        "ue_intitule": "Programmation distribuée pour le stockage et le calcul",
+        "classe": [
+            {
+                "nom_licence": "IA_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_80@gmail.com",
+                "nom": "TIASSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_80@gmail.com",
+                "nom": "AFANOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEL1625",
+        "ue_intitule": "Automate Programmable Industriel (API)",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_81@gmail.com",
+                "nom": "DITONA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_81@gmail.com",
+                "nom": "GNAGLIGA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1INF1423",
+        "ue_intitule": "Administration Système Linux",
+        "classe": [
+            {
+                "nom_licence": "GL_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "SR_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_82@gmail.com",
+                "nom": "TEPE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEL1623",
+        "ue_intitule": "Machines Electriques : Constitution et Principe de",
+        "classe": [
+            {
+                "nom_licence": "ctionnemen",
+                "niveau": "Licence",
+                "departement": "ct",
+                "mention": "on"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_83@gmail.com",
+                "nom": "(LF GE S6)",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEC1624",
+        "ue_intitule": "Construction métallique : notions de bases et technologie",
+        "classe": [
+            {
+                "nom_licence": "GC_S6",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_84@gmail.com",
+                "nom": "AMEY",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1226",
+        "ue_intitule": "Matériaux de construction des ouvrages de génie civil",
+        "classe": [
+            {
+                "nom_licence": "GC_S2",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_85@gmail.com",
+                "nom": "BANAKINAO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "PHY1225",
+        "ue_intitule": "Introduction à la Physique des capteurs",
+        "classe": [
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_86@gmail.com",
+                "nom": "GUENOUKPATI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1627",
+        "ue_intitule": "Electroniques : Fonctions et Systèmes",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_87@gmail.com",
+                "nom": "ADJALLAH",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1626",
+        "ue_intitule": "Thermodynamique avancée",
+        "classe": [
+            {
+                "nom_licence": "GM_S6",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_88@gmail.com",
+                "nom": "AYELEH",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_88@gmail.com",
+                "nom": "ESSEY",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEC1620",
+        "ue_intitule": "Routes : Conception Géométrique",
+        "classe": [
+            {
+                "nom_licence": "GC_S6",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_89@gmail.com",
+                "nom": "GBAFA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2INF1220/2INF1225/INF1226",
+        "ue_intitule": "Introduction à la programmation",
+        "classe": [
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GC_S2",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_90@gmail.com",
+                "nom": "AYELEH",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1428",
+        "ue_intitule": "Modélisation  UML",
+        "classe": [
+            {
+                "nom_licence": "GL_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_91@gmail.com",
+                "nom": "HOETOWOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MTH1620",
+        "ue_intitule": "Statistiques exploratoires multidimensionnelles",
+        "classe": [
+            {
+                "nom_licence": "IA_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_92@gmail.com",
+                "nom": "TAMPANGO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_92@gmail.com",
+                "nom": "POTOKOYE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1625",
+        "ue_intitule": "Développement d'applications distribuées",
+        "classe": [
+            {
+                "nom_licence": "IS_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_93@gmail.com",
+                "nom": "ABOLO-SEWOVI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1624",
+        "ue_intitule": "Montage d'usinage",
+        "classe": [
+            {
+                "nom_licence": "GM_S6",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_94@gmail.com",
+                "nom": "AGBETOSSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MTH1225/MTH1220",
+        "ue_intitule": "Eléments d'Analyse Mathématique",
+        "classe": [
+            {
+                "nom_licence": "GE_S2",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GC_S2",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GM_S2",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_95@gmail.com",
+                "nom": "TCHARIE",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "CPT1420",
+        "ue_intitule": "Comptabilité Générale de base",
+        "classe": [
+            {
+                "nom_licence": "GL_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "SR_S4",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_96@gmail.com",
+                "nom": "LAWSON-BODY",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1623",
+        "ue_intitule": "Initiation à l'ingénierie des Systèmes d'Information",
+        "classe": [
+            {
+                "nom_licence": "IS_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_97@gmail.com",
+                "nom": "ZOMBLEOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEC1427",
+        "ue_intitule": "Structure de chaussée, matériaux et entretien",
+        "classe": [
+            {
+                "nom_licence": "GC_S4",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_98@gmail.com",
+                "nom": "BANAKINAO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1425",
+        "ue_intitule": "Maintenance des Appareils Audio Visuels (MAAV)",
+        "classe": [
+            {
+                "nom_licence": "GE_S4",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_99@gmail.com",
+                "nom": "OTTOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEL1221",
+        "ue_intitule": "Circuits Logiques Séquentiels",
+        "classe": [
+            {
+                "nom_licence": "SR_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            },
+            {
+                "nom_licence": "GL_S2",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_100@gmail.com",
+                "nom": "ASSIDENU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "ANG1620",
+        "ue_intitule": "Anglais",
+        "classe": [
+            {
+                "nom_licence": "IA_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            },
+            {
+                "nom_licence": "IS_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            },
+            {
+                "nom_licence": "LT_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_101@gmail.com",
+                "nom": "MIHAM",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEL1622",
+        "ue_intitule": "Electromagnétisme",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_102@gmail.com",
+                "nom": "GUENOUKPATI",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1624",
+        "ue_intitule": "Développement d'applications de bureau",
+        "classe": [
+            {
+                "nom_licence": "IS_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_103@gmail.com",
+                "nom": "ZOMBLEOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEL1626",
+        "ue_intitule": "Convertisseurs statiques",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_104@gmail.com",
+                "nom": "AGBOSSOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "2GEC1625",
+        "ue_intitule": "Assainissement : notions de bases et technologie",
+        "classe": [
+            {
+                "nom_licence": "GC_S6",
+                "niveau": "Licence",
+                "departement": "GC",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_105@gmail.com",
+                "nom": "GBAFA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1420",
+        "ue_intitule": "Organisation et méthodes de la maintenance",
+        "classe": [
+            {
+                "nom_licence": "GM_S4",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LP"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_106@gmail.com",
+                "nom": "DROVOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "MTH1621",
+        "ue_intitule": "Data Mining",
+        "classe": [
+            {
+                "nom_licence": "IA_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_107@gmail.com",
+                "nom": "AGBEMADON",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_107@gmail.com",
+                "nom": "BASSA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEL1624",
+        "ue_intitule": "Système de Maintenance",
+        "classe": [
+            {
+                "nom_licence": "GE_S6",
+                "niveau": "Licence",
+                "departement": "GE",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_108@gmail.com",
+                "nom": "ADJALLAH",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "1GEM1627",
+        "ue_intitule": "Fabrication mécanique : Tournage et Fraisage",
+        "classe": [
+            {
+                "nom_licence": "GM_S6",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_109@gmail.com",
+                "nom": "AFIO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_109@gmail.com",
+                "nom": "ESSEY",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            },
+            {
+                "role": "professeur",
+                "email": "text_email_109@gmail.com",
+                "nom": "NTSOUAGLO",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "INF1620",
+        "ue_intitule": "Administration de bases de données",
+        "classe": [
+            {
+                "nom_licence": "IA_S",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            },
+            {
+                "nom_licence": "IS_S6",
+                "niveau": "Licence",
+                "departement": "GI",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_110@gmail.com",
+                "nom": "ANAKPA",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    },
+    {
+        "ue_code": "GEM1620",
+        "ue_intitule": "Métallurgie",
+        "classe": [
+            {
+                "nom_licence": "GM_S6",
+                "niveau": "Licence",
+                "departement": "GM",
+                "mention": "LF"
+            }
+        ],
+        "teacher": [
+            {
+                "role": "professeur",
+                "email": "text_email_111@gmail.com",
+                "nom": "MOUZOU",
+                "prenom": "Unkown",
+                "password": "123456",
+                "is_active": true,
+                "is_verified": true
+            }
+        ],
+        "creanaux": [
+            {
+                "Lundi": "7H-9H"
+            }
+        ]
+    }
+]

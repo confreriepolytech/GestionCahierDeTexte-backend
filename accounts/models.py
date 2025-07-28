@@ -50,8 +50,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ["password"]
 
 
-    def __str__(self):
-        return self.email
 
     def tokens(self):
         refresh = RefreshToken.for_user(self)
@@ -63,12 +61,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 
     class Meta:
-        pass
-        #managed = False
+        ordering = ['role']
         db_table = 'utilisateur'
 
 
-
+    def __str__(self):
+       return f"{self.nom} {self.prenom}"
 
 
 
@@ -95,12 +93,15 @@ class Professeur(models.Model):
 
 
     class Meta:
-        #managed = False
+        # managed = False
         verbose_name = 'professeur'
         verbose_name_plural = 'professeurs'
-        ordering = []
+        ordering = ["-user_id"]
         db_table = 'professeur'
 
+
+    def __str__(self):
+        return f"{self.user_id.nom} {self.user_id.prenom}"
 
 
 
@@ -125,6 +126,7 @@ class Classe(models.Model):
         #managed = False
         verbose_name = 'classe'
         verbose_name_plural = 'classes'
+        ordering=['-mention']
         db_table = 'classe'
 
     def __str__(self):

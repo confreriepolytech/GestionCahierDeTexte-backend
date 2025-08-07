@@ -27,7 +27,7 @@ CREATE TABLE `auth_group` (
   `name` varchar(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +55,7 @@ CREATE TABLE `auth_group_permissions` (
   KEY `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id`),
   CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +82,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `cahiertexte` (
   KEY `Cahiertexte_id_secretaire_70133660_fk_secretaireclasse_id` (`id_secretaire`),
   CONSTRAINT `Cahiertexte_id_classe_a1c5f806_fk_classe_id_classe` FOREIGN KEY (`id_classe`) REFERENCES `classe` (`id_classe`),
   CONSTRAINT `Cahiertexte_id_secretaire_70133660_fk_secretaireclasse_id` FOREIGN KEY (`id_secretaire`) REFERENCES `secretaireclasse` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +140,7 @@ CREATE TABLE `classe` (
   `departement` varchar(100) NOT NULL,
   `mention` varchar(23) NOT NULL,
   PRIMARY KEY (`id_classe`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,7 +175,7 @@ CREATE TABLE `django_admin_log` (
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_utilisateur_id` FOREIGN KEY (`user_id`) REFERENCES `utilisateur` (`id`),
   CONSTRAINT `django_admin_log_chk_1` CHECK ((`action_flag` >= 0))
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +201,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,7 +227,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -253,7 +253,7 @@ CREATE TABLE `django_session` (
   `expire_date` datetime(6) NOT NULL,
   PRIMARY KEY (`session_key`),
   KEY `django_session_expire_date_a5c62663` (`expire_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +280,7 @@ CREATE TABLE `fichiers_ue` (
   PRIMARY KEY (`id_Fichiers_Ue`),
   KEY `Fichiers_Ue_id_UEs_2934b9f7_fk_UEs_id_UEs` (`id_UEs`),
   CONSTRAINT `Fichiers_Ue_id_UEs_2934b9f7_fk_UEs_id_UEs` FOREIGN KEY (`id_UEs`) REFERENCES `ues` (`id_UEs`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -306,7 +306,7 @@ CREATE TABLE `professeur` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id_id` (`user_id_id`),
   CONSTRAINT `professeur_user_id_id_685e7555_fk_utilisateur_id` FOREIGN KEY (`user_id_id`) REFERENCES `utilisateur` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -341,7 +341,7 @@ CREATE TABLE `seance` (
   CONSTRAINT `seance_id_classe_78366382_fk_classe_id_classe` FOREIGN KEY (`id_classe`) REFERENCES `classe` (`id_classe`),
   CONSTRAINT `seance_id_professeur_98b9fe6d_fk_professeur_id` FOREIGN KEY (`id_professeur`) REFERENCES `professeur` (`id`),
   CONSTRAINT `seance_id_UEs_5c578ed4_fk_UEs_id_UEs` FOREIGN KEY (`id_UEs`) REFERENCES `ues` (`id_UEs`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -369,7 +369,7 @@ CREATE TABLE `secretaireclasse` (
   KEY `secretaireclasse_id_classe_d602df8e_fk_classe_id_classe` (`id_classe`),
   CONSTRAINT `secretaireclasse_id_classe_d602df8e_fk_classe_id_classe` FOREIGN KEY (`id_classe`) REFERENCES `classe` (`id_classe`),
   CONSTRAINT `secretaireclasse_user_id_id_ae75c859_fk_utilisateur_id` FOREIGN KEY (`user_id_id`) REFERENCES `utilisateur` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -396,7 +396,7 @@ CREATE TABLE `secretairegeneral` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id_id` (`user_id_id`),
   CONSTRAINT `secretairegeneral_user_id_id_0792a987_fk_utilisateur_id` FOREIGN KEY (`user_id_id`) REFERENCES `utilisateur` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -422,7 +422,7 @@ CREATE TABLE `token_blacklist_blacklistedtoken` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `token_id` (`token_id`),
   CONSTRAINT `token_blacklist_blacklistedtoken_token_id_3cc7fe56_fk` FOREIGN KEY (`token_id`) REFERENCES `token_blacklist_outstandingtoken` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -452,7 +452,7 @@ CREATE TABLE `token_blacklist_outstandingtoken` (
   UNIQUE KEY `token_blacklist_outstandingtoken_jti_hex_d9bdf6f7_uniq` (`jti`),
   KEY `token_blacklist_outs_user_id_83bc629a_fk_utilisate` (`user_id`),
   CONSTRAINT `token_blacklist_outs_user_id_83bc629a_fk_utilisate` FOREIGN KEY (`user_id`) REFERENCES `utilisateur` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -484,7 +484,7 @@ CREATE TABLE `ues` (
   KEY `UEs_id_prof_819a95d2_fk_professeur_id` (`id_prof`),
   CONSTRAINT `UEs_classe_id_dca815b8_fk_classe_id_classe` FOREIGN KEY (`classe_id`) REFERENCES `classe` (`id_classe`),
   CONSTRAINT `UEs_id_prof_819a95d2_fk_professeur_id` FOREIGN KEY (`id_prof`) REFERENCES `professeur` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -523,7 +523,7 @@ CREATE TABLE `utilisateur` (
   KEY `utilisateur_is_active_721a8669` (`is_active`),
   KEY `utilisateur_is_staff_9f5ecf5b` (`is_staff`),
   KEY `utilisateur_is_verified_e35ac157` (`is_verified`)
-) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -552,7 +552,7 @@ CREATE TABLE `utilisateur_groups` (
   KEY `utilisateur_groups_group_id_f333a17e_fk_auth_group_id` (`group_id`),
   CONSTRAINT `utilisateur_groups_customuser_id_5bf3c374_fk_utilisateur_id` FOREIGN KEY (`customuser_id`) REFERENCES `utilisateur` (`id`),
   CONSTRAINT `utilisateur_groups_group_id_f333a17e_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -580,7 +580,7 @@ CREATE TABLE `utilisateur_user_permissions` (
   KEY `utilisateur_user_per_permission_id_0616051c_fk_auth_perm` (`permission_id`),
   CONSTRAINT `utilisateur_user_per_customuser_id_57e74459_fk_utilisate` FOREIGN KEY (`customuser_id`) REFERENCES `utilisateur` (`id`),
   CONSTRAINT `utilisateur_user_per_permission_id_0616051c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -617,7 +617,7 @@ CREATE TABLE `validation` (
   CONSTRAINT `validation_id_professeur_e18706fb_fk_professeur_id` FOREIGN KEY (`id_professeur`) REFERENCES `professeur` (`id`),
   CONSTRAINT `validation_id_seance_fed5b2d5_fk_seance_id_seance` FOREIGN KEY (`id_seance`) REFERENCES `seance` (`id_seance`),
   CONSTRAINT `validation_id_UEs_1f082b04_fk_UEs_id_UEs` FOREIGN KEY (`id_UEs`) REFERENCES `ues` (`id_UEs`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

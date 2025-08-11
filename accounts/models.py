@@ -185,7 +185,7 @@ class Cahiertexte(models.Model):
     date_de_mise_a_jour = models.DateTimeField(auto_now=True)# date de mise a jour
 
     class Meta:
-        db_table = 'Cahiertexte'
+        db_table = 'cahiertexte'
         #managed = False
         verbose_name = 'Cahiertexte'
         verbose_name_plural = 'Cahiertextes'
@@ -240,7 +240,7 @@ class Ue(models.Model):
         verbose_name = 'UE'
         verbose_name_plural = 'UEs'
         ordering = ['-classe']
-        db_table = 'UEs'  # Correspond au nom exact de la table dans MySQL
+        db_table = 'ues'  # Correspond au nom exact de la table dans MySQL
 
     def __str__(self):
         return f"{self.code_UEs} - {self.intitule_UEs}- {self.classe}"
@@ -256,7 +256,7 @@ class Fichier_Ue(models.Model):
         #managed = False
 
         ordering = ['-id_UEs']
-        db_table = 'Fichiers_Ue'
+        db_table = 'fichiers_ue'
 
     def __str__(self):
         return self.lien_fichier

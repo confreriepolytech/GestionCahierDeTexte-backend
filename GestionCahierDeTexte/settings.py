@@ -129,11 +129,11 @@ WSGI_APPLICATION = 'GestionCahierDeTexte.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gestion_stock_epl',
-        'USER': 'root', # votre nom d'utilisateur
-        'PASSWORD': 'adminpass', #votre mot de passe
-        'HOST': '127.0.0.1',
-        'PORT': '3306',       # Port par défaut de MySQL
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'), # votre nom d'utilisateur
+        'PASSWORD':  os.environ.get('DB_PASSWORD'), #votre mot de passe
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT':  os.environ.get('DB_PORT','3306'),       # Port of the database, by default 3306 
     } }
 """
 DATABASES = {

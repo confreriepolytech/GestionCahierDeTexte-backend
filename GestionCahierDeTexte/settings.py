@@ -1,6 +1,9 @@
 from datetime import timedelta
 from pathlib import Path
 from dotenv import load_dotenv
+
+
+import os
 load_dotenv()
 
 
@@ -188,7 +191,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-import os
+
 
 MEDIA_URL = '/media/'  # URL de base pour les fichiers de cours
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Dossier où seront stockés les fichiers uploadés

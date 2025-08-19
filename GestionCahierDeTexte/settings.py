@@ -22,8 +22,8 @@ SECRET_KEY = 'django-insecure-ocl4=av#y@013qlloi-u$5!4)(vy12p#(!ffvkn(cpw)_q6+&9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gestioncahierdetexte-backend-aoc0.onrender.com', '127.0.0.1']
-
+#ALLOWED_HOSTS = ['gestioncahierdetexte-backend-aoc0.onrender.com', '127.0.0.1']
+ALLOWED_HOSTS=['*'] # very dangerous , to change after 
 CORS_ALLOW_ALL_ORIGINS = True
 
 

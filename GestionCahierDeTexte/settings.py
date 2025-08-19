@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     "drf_spectacular",
 
-
+    'corsheaders'
     #'accounts',
     #'ues',
 
@@ -93,6 +93,9 @@ AUTHENTICATION_BACKENDS = (
 )"""
 
 MIDDLEWARE = [
+     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -104,6 +107,8 @@ MIDDLEWARE = [
     #'allauth.account.middleware.AccountMiddleware'
 ]
 
+# Configuration CORS
+CORS_ALLOW_ALL_ORIGINS = True  # for developpement only
 ROOT_URLCONF = 'GestionCahierDeTexte.urls'
 
 TEMPLATES = [

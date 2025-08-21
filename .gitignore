@@ -4,5 +4,5 @@ CahierDeTexte/__pycahe__
 GestionCahierDeTexte/__pycahe__
 accounts/__pycahe__
 .idea
-venv/
-/venv/
+/.venv/
+./GestionCahierDeTexte/.env

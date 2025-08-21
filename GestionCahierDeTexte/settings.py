@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ocl4=av#y@013qlloi-u$5!4)(vy12p#(!ffvkn(cpw)_q6+&9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False # for the moment
 
 #ALLOWED_HOSTS = ['gestioncahierdetexte-backend-aoc0.onrender.com', '127.0.0.1']
 ALLOWED_HOSTS=['*'] # very dangerous , to change after 

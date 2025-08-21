@@ -192,7 +192,7 @@ for ue_data in ue_data_list:
         ue.intitule_UEs = ue_data['ue_intitule']
         ue.save()
 
-    for prof_data in ue_data['teacher']:
+    """for prof_data in ue_data['teacher']:
         custom_user, _ = CustomUser.objects.get_or_create(
             email=prof_data['email'],
             defaults=prof_data
@@ -202,7 +202,7 @@ for ue_data in ue_data_list:
         })
         ue.id_prof = prof  # M2M relationship
         ue.save()
-        break
+        break"""
 
     print(f"UE '{ue.code_UEs}' populated with  professeur(s).")
 

@@ -237,8 +237,8 @@ class Ue(models.Model):
     class Meta:
         # managed = False
 
-        verbose_name = 'UE'
-        verbose_name_plural = 'UEs'
+        verbose_name = 'ue'
+        verbose_name_plural = 'ues'
         ordering = ['-classe']
         db_table = 'ues'  # Correspond au nom exact de la table dans MySQL
 

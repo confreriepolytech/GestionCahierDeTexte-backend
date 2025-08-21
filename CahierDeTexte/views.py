@@ -53,7 +53,7 @@ class CahiertexteListView(generics.ListAPIView):
         """
         Filtrage des cahiers selon les paramètres fournis dans l'URL.
         """
-        queryset = self.queryset
+        queryset = Cahiertexte.objects.all()
         classe = self.request.query_params.get('classe', None)
         date = self.request.query_params.get('date', None)
         professeur = self.request.query_params.get('professeur', None)

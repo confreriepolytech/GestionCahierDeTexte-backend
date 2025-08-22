@@ -5,6 +5,7 @@ import jwt
 from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.sites.shortcuts import get_current_site
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils.encoding import DjangoUnicodeDecodeError
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -17,7 +18,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from GestionCahierDeTexte import settings
 from accounts import google
-from accounts.models import Professeur, SecretaireGeneral, SecretaireClasse, Classe
+from accounts.models import Professeur, SecretaireGeneral, SecretaireClasse, Classe, CustomUser
 from accounts.register import register_social_user
 from accounts.utils import Util
 
@@ -39,14 +40,27 @@ class UserRegistrationSerializer(serializers.Serializer):
     ])
 
     # specific fields
-    departement = serializers.CharField(required=False)
-    id_classe = serializers.PrimaryKeyRelatedField(
+    departement = serializers.ChoiceField(required=False,
+                                          choices=[('Génie_Civil','Génie Civil'),
+                                            ('Génie_Electrique','Génie Electrique'),
+                                            ('Génie_Mécanique','Génie Mécanique'),
+                                            ('Génie_Informatique','Génie Informatique')],
+                                          help_text='Required only for Secretaire general',
+                                          allow_blank=True,
+                                          allow_null=False)
+    """id_classe = serializers.SlugRelatedField(
         queryset=Classe.objects.all(),
         required=False,
         allow_null=True,
         help_text="Required only for secretaire_classe",
         write_only=True,
-    )
+        slug_field="nom_licence",
+    )"""
+    classe = serializers.ChoiceField(choices=[c.nom_licence for c in Classe.objects.all()],
+                                        required=False,
+                                        allow_null=False,
+                                        help_text="Required only for secretaire_classe",
+                                        write_only=True,)
     signature = serializers.ImageField(
         required=False,
         write_only=True,
@@ -58,6 +72,11 @@ class UserRegistrationSerializer(serializers.Serializer):
 
     def validate(self, data):
         role = data.get('role')
+        nom = data.get('nom')
+        prenom =  data.get('prenom')
+        email = data.get('email')
+
+
         required_fields = {
             'secretaire_general': ['departement'],
             'secretaire_class': ['id_classe'],
@@ -73,21 +92,31 @@ class UserRegistrationSerializer(serializers.Serializer):
                 for field in missing
             })
 
+        # check if the user exist already or his email is already taken by someone else
+        if CustomUser.objects.filter(nom=nom , prenom=prenom).exists() or CustomUser.objects.filter(email=email) :
+            raise serializers.ValidationError({'Please Login to your accounts or contact admin'})
 
         return  data
 
     def create(self, validated_data):
         role = validated_data.get("role")
+        email=  validated_data.get("email")
+        nom = validated_data.get("nom")
+        prenom = validated_data.get("prenom")
         password = validated_data.get("password")
         departement = validated_data.get("departement")
-        id_classe = validated_data.get("id_classe")
+        classe = validated_data.get("classe")
         signature = validated_data.get("signature")
 
+
+
+        # get the classe
+        id_classe = get_object_or_404(Classe , nom_licence=classe)
         #create user
-        user = User.objects.create_user(email=validated_data['email'],
+        user = User.objects.create_user(email=email,
                                    role=role,
-                                   nom=validated_data['nom'],
-                                   prenom=validated_data['prenom'],
+                                   nom=nom,
+                                   prenom=prenom,
                                    password=password,)
 
 
@@ -104,7 +133,7 @@ class UserRegistrationSerializer(serializers.Serializer):
 
 
         elif role == 'secretaire_classe':
-            SecretaireClasse.objects.create(user,
+            SecretaireClasse.objects.create(user_id=user,
                                             id_classe=id_classe)
 
         else:

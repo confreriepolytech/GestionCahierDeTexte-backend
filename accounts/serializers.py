@@ -1,4 +1,5 @@
 import os
+
 from inspect import signature
 
 import jwt
@@ -7,6 +8,7 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
+from django.utils import timezone
 from django.utils.encoding import DjangoUnicodeDecodeError
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from rest_framework import serializers, status
@@ -109,7 +111,6 @@ class UserRegistrationSerializer(serializers.Serializer):
         signature = validated_data.get("signature")
 
 
-
         # get the classe
         id_classe = get_object_or_404(Classe , nom_licence=classe)
         #create user
@@ -117,7 +118,8 @@ class UserRegistrationSerializer(serializers.Serializer):
                                    role=role,
                                    nom=nom,
                                    prenom=prenom,
-                                   password=password,)
+                                   password=password,
+                                   last_login=timezone.now())
 
 
         # Create role-specific instance
@@ -265,6 +267,9 @@ class LoginSerializer(serializers.ModelSerializer):
             raise AuthenticationFailed('Account is disabled. contact admin')
         if not  user.is_verified:
             raise AuthenticationFailed('Email is not verified')
+
+        user.last_login = timezone.now()
+        user.save(update_fields=['last_login'])
 
         return {
             'email': user.email,

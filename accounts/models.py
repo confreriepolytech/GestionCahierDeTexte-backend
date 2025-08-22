@@ -1,6 +1,9 @@
+
+
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.contrib.auth.models import  PermissionsMixin
 from django.db import models
+from django.utils import timezone
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
@@ -22,6 +25,12 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault("is_superuser", True)
         extra_fields.setdefault('is_verified', True)
         extra_fields.setdefault('role', 'admin')
+        extra_fields.setdefault('date_joined', timezone.now())
+        extra_fields.setdefault('last_login', timezone.now())
+        extra_fields.setdefault('is_active', True)
+        extra_fields.setdefault('nom','superadmin')
+        extra_fields.setdefault('prenom', 'superadmin')
+
         return self.create_user(email, password, **extra_fields)
 
 
@@ -38,9 +47,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     nom = models.CharField(max_length=150, blank=False, null=False)
     prenom = models.CharField(max_length=150, blank=False, null=False)
     role = models.CharField(max_length=23, choices=ROLE_CHOICES, blank=False, null=False, db_index=True)
+    date_joined = models.DateTimeField(default=timezone.now)
+
 
     auth_provider = models.CharField(max_length=10, default=AUTH_PROVIDERS.get('email'))
-    is_active = models.BooleanField(default=True, db_index=True)
+    is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False, db_index=True)
     is_verified = models.BooleanField(default=False, db_index=True)
 

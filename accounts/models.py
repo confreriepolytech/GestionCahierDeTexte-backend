@@ -83,10 +83,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 class SecretaireGeneral(models.Model):
     user_id = models.OneToOneField("accounts.CustomUser", on_delete=models.CASCADE, db_index=True)
-    departement = models.CharField(choices=[('Génie_Civil','Génie Civil'),
-                                            ('Génie_Electrique','Génie Electrique'),
-                                            ('Génie_Mécanique','Génie Mécanique'),
-                                            ('Génie_Informatique','Génie Informatique')],max_length=100, blank=False, null=False)
+    departement = models.CharField(choices=[('GC','Génie Civil'),
+                                            ('GE','Génie Electrique'),
+                                            ('GM','Génie Mécanique'),
+                                            ('GI','Génie Informatique')],
+                                   max_length=100, blank=False, null=False)
 
     class Meta:
         #managed = False
@@ -126,8 +127,7 @@ class Classe(models.Model):
                                             ('GE','Génie Electrique'),
                                             ('GM','Génie Mécanique'),
                                             ('GI','Génie Informatique'),
-                                            ('TC','Tronc Commun')
-                                    ],
+                                            ('TC','Tronc Commun')],
                                         max_length=100, blank=False, null=False)
     mention = models.CharField(max_length=23,
                                choices=[('LF', 'Licence Fondamentale'),

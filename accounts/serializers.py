@@ -43,13 +43,14 @@ class UserRegistrationSerializer(serializers.Serializer):
 
     # specific fields
     departement = serializers.ChoiceField(required=False,
-                                          choices=[('Génie_Civil','Génie Civil'),
-                                            ('Génie_Electrique','Génie Electrique'),
-                                            ('Génie_Mécanique','Génie Mécanique'),
-                                            ('Génie_Informatique','Génie Informatique')],
+                                          choices=[('GC','Génie Civil'),
+                                            ('GE','Génie Electrique'),
+                                            ('GM','Génie Mécanique'),
+                                            ('GI','Génie Informatique')],
                                           help_text='Required only for Secretaire general',
                                           allow_blank=True,
                                           allow_null=False)
+
     """id_classe = serializers.SlugRelatedField(
         queryset=Classe.objects.all(),
         required=False,
@@ -77,11 +78,12 @@ class UserRegistrationSerializer(serializers.Serializer):
         nom = data.get('nom')
         prenom =  data.get('prenom')
         email = data.get('email')
+        classe = data.get('classe')
 
 
         required_fields = {
             'secretaire_general': ['departement'],
-            'secretaire_class': ['id_classe'],
+            'secretaire_classe': ['classe'],
         }
 
         #check for missing fields
@@ -95,24 +97,30 @@ class UserRegistrationSerializer(serializers.Serializer):
             })
 
         # check if the user exist already or his email is already taken by someone else
-        if CustomUser.objects.filter(nom=nom , prenom=prenom).exists() or CustomUser.objects.filter(email=email) :
+        if User.objects.filter(nom=nom , prenom=prenom).exists() or User.objects.filter(email=email) :
             raise serializers.ValidationError({'Please Login to your accounts or contact admin'})
+
+        #check for the classe existing
+        if role == 'secretaire_classe':
+            id_classe = get_object_or_404(Classe, nom_licence=classe)
+            data.pop('classe')
+            data['id_classe'] = id_classe
+
 
         return  data
 
     def create(self, validated_data):
         role = validated_data.get("role")
-        email=  validated_data.get("email")
+        email =  validated_data.get("email")
         nom = validated_data.get("nom")
         prenom = validated_data.get("prenom")
         password = validated_data.get("password")
         departement = validated_data.get("departement")
-        classe = validated_data.get("classe")
+        id_classe = validated_data.get("id_classe")
         signature = validated_data.get("signature")
 
 
-        # get the classe
-        id_classe = get_object_or_404(Classe , nom_licence=classe)
+
         #create user
         user = User.objects.create_user(email=email,
                                    role=role,

@@ -24,6 +24,7 @@ class MultiUserAuthBackend:
                 if check_password(password, user.password):
                     return user  # Retourne l'instance du modèle (User1, User2 ou User3)
             except user_model.DoesNotExist:
+                print('hello world 2')
                 continue
         return None
 
@@ -39,5 +40,6 @@ class MultiUserAuthBackend:
             try:
                 return user_model.objects.get(pk=user_id)
             except user_model.DoesNotExist:
+                print('hello world 3')
                 continue
         return None

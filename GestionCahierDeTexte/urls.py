@@ -7,8 +7,8 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, Sp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),  # Routes de l'application comptes
-    path('cahier-de-texte/', include('CahierDeTexte.urls')),  # Routes de l'application CahierDeTexte
+    path('api/auth/', include('accounts.urls')),  # Routes de l'application comptes
+    path('api/', include('CahierDeTexte.urls')),  # Routes de l'application CahierDeTexte
 ]
 
 urlpatterns += [

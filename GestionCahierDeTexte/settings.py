@@ -87,10 +87,11 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"""
 
-"""# Disable built-in Django authentication
+#Disable built-in Django authentication
 AUTHENTICATION_BACKENDS = (
+    #"accounts.auth_backends.CustomModelBackend",
     "django.contrib.auth.backends.ModelBackend",
-)"""
+)
 
 MIDDLEWARE = [
      'corsheaders.middleware.CorsMiddleware',

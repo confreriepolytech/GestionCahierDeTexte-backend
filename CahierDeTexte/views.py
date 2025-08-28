@@ -2,6 +2,7 @@
 import os
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
+from drf_spectacular.utils import extend_schema
 from rest_framework import generics, permissions, status
 from django.http import FileResponse
 from django.conf import settings
@@ -14,7 +15,7 @@ from accounts.permissions import IsSecretaireClasse, IsProfesseur, IsCustomAdmin
 #from ues.serializers import UeSerializer
 #from GestionCahierDeTexte import settings
 from .serializers import CahiertexteSerializer, SeanceSerializer, FichierUeSerializer, HTMLUploadSerializer, \
-    UeSerializer, ClasseSerializer
+    UeSerializer, ClasseSerializer, SeanceCreateSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 #from .models import Cahiertexte, Validation, Seance, Fichier_Ue, Ue
@@ -39,6 +40,10 @@ class CahiertexteCreateView(generics.CreateAPIView):
     serializer_class = CahiertexteSerializer
     #permission_classes = [permissions.IsAuthenticated, IsSecretaireClasse]
 
+    @extend_schema(tags=["Cahier-de-texte"])
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
+
 
 class CahiertexteListView(generics.ListAPIView):
     """
@@ -48,6 +53,7 @@ class CahiertexteListView(generics.ListAPIView):
     queryset = Cahiertexte.objects.all()
     serializer_class = CahiertexteSerializer
     permission_classes = [permissions.IsAuthenticated]
+
 
     def get_queryset(self):
         """
@@ -67,8 +73,14 @@ class CahiertexteListView(generics.ListAPIView):
 
         return queryset
 
+    @extend_schema(tags=["Cahier-de-texte"])
+    def get(self, *args, **kwargs):
+        return super().get(*args, **kwargs)
+
 
 class CahierTexteAPIView(APIView):
+
+    @extend_schema(tags=["Cahier-de-texte"])
     def get(self, request):
         cahiers = Cahiertexte.objects.all()  # Récupere tous les cahiers de texte
         serializer = CahiertexteSerializer(cahiers, many=True)
@@ -78,6 +90,7 @@ class CahierTexteAPIView(APIView):
 class CahierTexteDataAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
+    @extend_schema(tags=["Cahier-de-texte"])
     def get(self, request, cahier_id):
         try:
             # Récupération du cahier de texte
@@ -124,45 +137,15 @@ class CahierTexteDataAPIView(APIView):
 
 
 class SeanceCreateView(generics.CreateAPIView):
-    serializer_class = SeanceSerializer
+    serializer_class = SeanceCreateSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+    @extend_schema(tags=["Seances-de-classe"])
     def post(self, request, *args, **kwargs):
-        # Récupérer l'ID du cahier
-        cahier_id = request.data.get('cahier')
-        cahier = get_object_or_404(Cahiertexte, id=cahier_id)
 
-        # Vérification des doublons pour la classe, date, et UE
-        date = request.data.get("date")
-        id_ue = request.data.get("id_ue")
-        if Seance.objects.filter(id_classe=cahier.id_classe, id_ue=id_ue, date_heure=date).exists():
-            return Response(
-                {"detail": "Une séance pour cette classe, UE, et date existe déjà."},
-                status=status.HTTP_400_BAD_REQUEST
-            )
 
-        # Données de la séance
-        seance_data = {
-            "cahier": cahier.id,
-            "date_heure": date,
-            "sous_session_seance": request.data.get("contenu"),
-            "id_professeur": request.data.get("professeur"),
-            "id_ue": id_ue,
-            "id_classe": cahier.id_classe.id,
-        }
-
-        serializer = SeanceSerializer(data=seance_data)
+        serializer = SeanceSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        seance = serializer.save()
-
-        # Création automatique de la validation
-        Validation.objects.create(
-            id_cahier=cahier,
-            id_professeur=seance.id_professeur,
-            id_ues=seance.id_ue,
-            id_seance=seance,
-            statut="non validé"
-        )
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -172,6 +155,11 @@ class SeanceUpdateView(generics.UpdateAPIView):
     serializer_class = SeanceSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+    @extend_schema(tags=["Seances-de-classe"])
+    def put(self, request, *args, **kwargs):
+        return super().put(*args, **kwargs)
+
+    @extend_schema(tags=["Seances-de-classe"])
     def patch(self, request, *args, **kwargs):
         instance = self.get_object()
 
@@ -205,6 +193,7 @@ class SeanceDeleteView(generics.DestroyAPIView):
     serializer_class = SeanceSerializer
     permission_classes = [permissions.IsAuthenticated,]
 
+    @extend_schema(tags=["Seances-de-classe"])
     def delete(self, request, *args, **kwargs):
         instance = self.get_object()
 
@@ -229,8 +218,9 @@ class ValidationUpdateView(APIView):
     """
     Vue permettant à un professeur de valider une séance.
     """
-    #permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
+    @extend_schema(tags=["Cahier-de-texte-validation-seances"])
     def patch(self, request, validation_id):
         try:
             # Récupérer la validation
@@ -261,6 +251,7 @@ class ValidationDeleteView(APIView):
     """
     #permission_classes = [permissions.IsAuthenticated]
 
+    @extend_schema(tags=["Cahier-de-texte-validation-seances"])
     def delete(self, request, validation_id):
         try:
             # Récupérer la validation
@@ -277,6 +268,9 @@ class ValidationDeleteView(APIView):
 
 
 class ValidationCahierAPIView(APIView):
+
+
+    @extend_schema(tags=["Cahier-de-texte-validation-seances"])
     def post(self, request, cahier_id, prof_id):
         try:
             cahier = Cahiertexte.objects.get(pk=cahier_id)
@@ -303,6 +297,7 @@ class ListeValidationView(APIView):
     """
     permission_classes = [permissions.IsAuthenticated]
 
+    @extend_schema(tags=["Cahier-de-texte-validation-seances"])
     def get(self, request):
         try:
             professeur = request.user.professeur
@@ -369,6 +364,8 @@ class ListeValidationView(APIView):
 
 
 class DownloadPDFView(APIView):
+
+    @extend_schema(tags=["Cahier-de-texte"])
     def get(self, request, filename):
         pdf_folder = os.path.join(settings.MEDIA_ROOT, 'pdfs')
         pdf_path = os.path.join(pdf_folder, filename)
@@ -403,15 +400,45 @@ class UeListCreateView(generics.ListCreateAPIView):
     queryset = Ue.objects.all()
     serializer_class = UeSerializer
 
+    @extend_schema(tags=["UE"])
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    @extend_schema(tags=["UE"])
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
+
 class ClasseListCreateView(generics.ListCreateAPIView):
     queryset = Classe.objects.all()
     serializer_class = ClasseSerializer
 
+    @extend_schema(tags=["Classe"])
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    @extend_schema(tags=["Classe"])
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
 
 
 class UeDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ue.objects.all()
     serializer_class = UeSerializer
+
+    @extend_schema(tags=["UE"])
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+    @extend_schema(tags=["UE"])
+    def put(self, request, *args, **kwargs):
+        return super().put(request, *args, **kwargs)
+
+    @extend_schema(tags=["UE"])
+    def patch(self, request, *args, **kwargs):
+        return super().patch(request, *args, **kwargs)
+
+    @extend_schema(tags=["UE"])
+    def delete(self, request, *args, **kwargs):
+        return super().patch(request, *args, **kwargs)
 
     """def get_permissions(self):
 
@@ -431,6 +458,7 @@ class UeDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class FichierUeListAPIView(APIView):  # Permet de lister tous les fichiers de cours
 
+    @extend_schema(tags=["UE"])
     def get(self, request):
         fichiers_ue = Fichier_Ue.objects.all()
         serializer = FichierUeSerializer(fichiers_ue, many=True)
@@ -441,6 +469,7 @@ class FichierUeUploadAPIView(APIView):  # Permet l'upload des fichiers de cours
     parser_classes = (MultiPartParser, FormParser)  # Nécessaire pour gérer les fichiers avec FileField
     permission_classes = [IsProfesseur]
 
+    @extend_schema(tags=["UE"])
     def post(self, request):
         serializer = FichierUeSerializer(data=request.data)
         if serializer.is_valid():
@@ -450,6 +479,8 @@ class FichierUeUploadAPIView(APIView):  # Permet l'upload des fichiers de cours
 
 
 class FichierUeDetailAPIView(APIView):  # Permet d'accéder à un fichier spécifique
+
+    @extend_schema(tags=["UE"])
     def get(self, request, id):
         try:
             fichier_ue = Fichier_Ue.objects.get(id_Fichiers_Ue=id)
@@ -462,6 +493,7 @@ class FichierUeDetailAPIView(APIView):  # Permet d'accéder à un fichier spéci
 class FichierUeDeleteAPIView(APIView):  # Permet de supprimer un fichier spécifique
     permission_classes = [IsCustomAdmin | IsProfesseur]  # Seul le professeur ou l'admin peut supprimer un fichier
 
+    @extend_schema(tags=["UE"])
     def delete(self, request, id):
         try:
             fichier_ue = Fichier_Ue.objects.get(id_Fichiers_Ue=id)
@@ -475,6 +507,8 @@ class FichierUeDeleteAPIView(APIView):  # Permet de supprimer un fichier spécif
 # ----------------------------------------------Cahier de texte---------------------------------------------------------
 
 class ConvertHTMLToPDFView(APIView):
+
+    @extend_schema(tags=["UE"])
     def post(self, request, *args, **kwargs):
         # Etape 1: Valider les données avec le serializer
         serializer = HTMLUploadSerializer(data=request.data)
@@ -507,6 +541,7 @@ class ConvertHTMLToPDFView(APIView):
 
 class ScheduleView(APIView):
 
+    @extend_schema(tags=["UE"])
     def get(self,request,  classe_id):
         classe = get_object_or_404(Classe, id=classe_id)
         ue_list = Ue.objects.filter(classe=classe)

@@ -1,4 +1,41 @@
-# backends.py
+from django.contrib.auth.backends import ModelBackend
+from django.core.exceptions import PermissionDenied
+
+class CustomModelBackend(ModelBackend):
+    """
+    Extend Django's default ModelBackend to raise an error
+    when a user is inactive instead of just returning None.
+    """
+    def user_can_authenticate(self, user):
+        # If the user is inactive, raise instead of returning False
+        if getattr(user, 'is_active', None) is False:
+            raise PermissionDenied("Account disabled, please contact admin")
+        return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""# backends.py
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import check_password
 from rest_framework.authtoken.admin import User
@@ -42,4 +79,4 @@ class MultiUserAuthBackend:
             except user_model.DoesNotExist:
                 print('hello world 3')
                 continue
-        return None
+        return None"""

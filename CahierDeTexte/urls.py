@@ -6,15 +6,24 @@ from .views import (
     CahierTexteDataAPIView,
     ValidationCahierAPIView,
     DownloadPDFView, ScheduleView, ConvertHTMLToPDFView, FichierUeDeleteAPIView, FichierUeDetailAPIView,
-    FichierUeUploadAPIView, FichierUeListAPIView, UeListCreateView, UeDetailView, ClasseListCreateView
+    FichierUeUploadAPIView, FichierUeListAPIView, UeListCreateView, UeDetailView, ClasseListCreateView,
+    SeanceCreateView, SeanceUpdateView, SeanceDeleteView
 )
 
 urlpatterns = [
-    path('create/', CahiertexteCreateView.as_view(), name='cahier-create'),
-    path('list/', CahiertexteListView.as_view(), name='cahier-list'),
-    path('', CahierTexteAPIView.as_view(), name='cahier-overview'),
-    path('<int:classe_id>/data/', CahierTexteDataAPIView.as_view(), name='cahier-data'),
-    path('<int:cahier_id>/validate/<int:prof_id>/', ValidationCahierAPIView.as_view(), name='validate-cahier'),
+    path('cahier-de-texte/create/', CahiertexteCreateView.as_view(), name='cahier-create'),
+    path('cahier-de-texte/list/', CahiertexteListView.as_view(), name='cahier-list'),
+    path('cahier-de-texte/data', CahierTexteAPIView.as_view(), name='cahier-overview'),
+    path('cahier-de-texte/<int:classe_id>/data/', CahierTexteDataAPIView.as_view(), name='cahier-data'),
+    path('cahier-de-texte/<int:cahier_id>/validate/<int:prof_id>/', ValidationCahierAPIView.as_view(), name='validate-cahier'),
+    path('cahier-de-texte/validation-update/<int:validation_id>', ValidationCahierAPIView.as_view(), name='validation-update'),
+
+    # Route for seances
+    path('seance-creation/', SeanceCreateView.as_view(), name='seance-creation'),
+    path('seance-update/', SeanceUpdateView.as_view(), name='seance-update'),
+    path('seance-delete/', SeanceDeleteView.as_view(), name='seance-deletion'),
+
+
     path('download/<str:filename>/', DownloadPDFView.as_view(), name='pdf-download'),
 
     # Routes pour les Unités d'Enseignement (UEs)
@@ -26,15 +35,15 @@ urlpatterns = [
     path('Classe/', ClasseListCreateView.as_view(), name='classe_list_create'),  # Liste et création des classe
 
     # Routes pour les fichiers liés aux UEs
-    path('fichiers/', FichierUeListAPIView.as_view(), name='fichier_ue_list'),  # Lister tous les fichiers de cours
-    path('fichiers/upload/', FichierUeUploadAPIView.as_view(), name='fichier_ue_upload'),  # Uploader un fichier
-    path('fichiers/<int:id>/', FichierUeDetailAPIView.as_view(), name='fichier_ue_detail'),  # Détails d'un fichier spécifique
-    path('fichiers/<int:id>/delete/', FichierUeDeleteAPIView.as_view(), name='fichier_ue_delete'),  # Supprimer un fichier
+    path('ue/fichiers/', FichierUeListAPIView.as_view(), name='fichier_ue_list'),  # Lister tous les fichiers de cours
+    path('ue/fichiers/upload/', FichierUeUploadAPIView.as_view(), name='fichier_ue_upload'),  # Uploader un fichier
+    path('ue/fichiers/<int:id>/', FichierUeDetailAPIView.as_view(), name='fichier_ue_detail'),  # Détails d'un fichier spécifique
+    path('ue/fichiers/<int:id>/delete/', FichierUeDeleteAPIView.as_view(), name='fichier_ue_delete'),  # Supprimer un fichier
 
     # Fonctionnalité de conversion HTML -> PDF
     path('convert-html-to-pdf/', ConvertHTMLToPDFView.as_view(), name='convert-html-to-pdf'),
 
     # feature schedule for ue
-    path('emploi-du-temps/<int:classe_id>/', ScheduleView.as_view(), name='schedule'),
+    path('ue/emploi-du-temps/<int:classe_id>/', ScheduleView.as_view(), name='schedule'),
 
 ]

@@ -97,7 +97,7 @@ class UserRegistrationSerializer(serializers.Serializer):
             })
 
         # check if the user exist already or his email is already taken by someone else
-        if User.objects.filter(nom=nom , prenom=prenom).exists() or User.objects.filter(email=email) :
+        if User.objects.filter(nom=nom , prenom=prenom).exists() or User.objects.filter(email=email).exists():
             raise serializers.ValidationError({'Please Login to your accounts or contact admin'})
 
         #check for the classe existing
@@ -126,8 +126,7 @@ class UserRegistrationSerializer(serializers.Serializer):
                                    role=role,
                                    nom=nom,
                                    prenom=prenom,
-                                   password=password,
-                                   last_login=timezone.now())
+                                   password=password)
 
 
         # Create role-specific instance
@@ -247,12 +246,18 @@ class GoogleSocialAuthSerializer(serializers.Serializer):
 class LoginSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(min_length=10)
     password = serializers.CharField(min_length=5, write_only=True)
-    tokens = serializers.CharField(read_only=True)
+    tokens = serializers.SerializerMethodField(read_only=True)
     #username = serializers.CharField(read_only=True)
 
-    class Meta:
-        model = User
-        fields = ['id', 'email', 'password', 'tokens',]
+
+    def get_tokens(self,obj):
+        user = self.context['user']
+
+        return{
+            'access_token': user.tokens()['access_token'],
+            'refresh_token': user.tokens()['refresh_token'],
+        }
+
 
 
     def validate(self, attrs):
@@ -263,15 +268,18 @@ class LoginSerializer(serializers.ModelSerializer):
 
 
         user = authenticate(email=email, password=password)
-
+        self.context['user'] = user
 
         """if filtered_user_by_email.exists() and filtered_user_by_email[0].auth_provider!= 'email' :
             print(filtered_user_by_email[0].auth_provider, 'hello')
             #raise AuthenticationFailed("please continue your login using " + filtered_user_by_email[0].auth_provider)"""
 
         if not user:
-            raise AuthenticationFailed('Invalid credentials , try again.')
+            raise AuthenticationFailed('Invalid credentials , try again or please contact admin.')
         if not user.is_active:
+            # this condition is never fulfilled actually because the default authenticate model
+            # return none if the user property is_active == False
+
             raise AuthenticationFailed('Account is disabled. contact admin')
         if not  user.is_verified:
             raise AuthenticationFailed('Email is not verified')
@@ -282,18 +290,23 @@ class LoginSerializer(serializers.ModelSerializer):
         return {
             'email': user.email,
             'password': password,
+             'user_role': user.role,
             #'username': user.username,
             'tokens':user.tokens()
         }
 
+    class Meta:
+        model = User
+        fields = ['id', 'email', 'password', 'tokens',]
+
 
 class LogoutSerializer(serializers.Serializer):
 
-    refresh = serializers.CharField()
+    refresh_token = serializers.CharField()
 
 
     def validate(self, attrs):
-        refresh_token = attrs.get('refresh')
+        refresh_token = attrs.get('refresh_token')
 
         try:
             RefreshToken(refresh_token)
@@ -303,13 +316,13 @@ class LogoutSerializer(serializers.Serializer):
         return attrs
 
     def save(self, **kwargs):
-        refresh_token = self.validated_data['refresh']
+        refresh_token = self.validated_data['refresh_token']
 
         try:
             token = RefreshToken(refresh_token)
             token.blacklist()
         except TokenError:
-            raise ValidationError({'refresh': 'Token could not be blacklisted'})
+            raise ValidationError({'refresh_token': 'Token could not be blacklisted'})
 
 
 

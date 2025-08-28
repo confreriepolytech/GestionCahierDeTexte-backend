@@ -1,4 +1,4 @@
-
+from drf_spectacular.utils import extend_schema
 from jsonschema.exceptions import ValidationError
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 
@@ -37,9 +37,11 @@ User = get_user_model()
 
 
 class UserRegistrationView(APIView):
+
     serializer_class = UserRegistrationSerializer
     parser_classes = [MultiPartParser, FormParser, JSONParser]  # Add file upload support(for signature)
 
+    @extend_schema(tags=['Auth'])
     def post(self, request):
 
         serializer = self.serializer_class(data=request.data)
@@ -93,6 +95,7 @@ class GoogleSocialAuthView(generics.GenericAPIView):
 
     serializer_class =  GoogleSocialAuthSerializer
 
+    @extend_schema(tags=['Auth'])
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -104,6 +107,7 @@ class VerifyEmailView(generics.GenericAPIView):
 
     serializer_class = VerifyEmailSerializer
 
+    @extend_schema(tags=['Auth'])
     def get(self, request):
         token = request.GET.get('token')
 
@@ -113,7 +117,7 @@ class VerifyEmailView(generics.GenericAPIView):
         user = serializer.context.get('user')
         if  user and not user.is_verified:
             user.is_verified = True
-            user.save()
+            user.save(update_field=['is_verified'])
 
         return Response({"email successfully verified !"}, status=status.HTTP_200_OK)
 
@@ -125,6 +129,7 @@ class LoginView(views.APIView):
 
     serializer_class = LoginSerializer
 
+    @extend_schema(tags=['Auth'])
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -141,7 +146,7 @@ class LogoutView(generics.GenericAPIView):
     #permission_classes = (IsAuthenticated,)
     serializer_class = LogoutSerializer
 
-
+    @extend_schema(tags=['Auth'])
     def post(self, request):
 
         serializer = self.serializer_class(data=request.data)
@@ -159,6 +164,7 @@ class RequestPasswordReset(generics.GenericAPIView):
 
     serializer_class = ResetPasswordEmailRequestSerializer
 
+    @extend_schema(tags=['Auth'])
     def post(self, request):
         serializer = self.serializer_class(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
@@ -192,6 +198,7 @@ class PasswordTokenCheckAPIView(generics.GenericAPIView):
 
     serializer_class = PasswordTokenCheckSerializer
 
+    @extend_schema(tags=['Auth'])
     def get(self, request, uidb64, token):
         serializer = self.serializer_class(data={'uidb64': uidb64, 'token': token})
         serializer.is_valid(raise_exception=True)
@@ -210,7 +217,7 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
 
     serializer_class = SetNewPasswordSerializer
 
-
+    @extend_schema(tags=['Auth'])
     def patch(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -232,6 +239,7 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
 class UploadSignatureAPIView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
+    @extend_schema(tags=['Auth'])
     def post(self, request, prof_id):
         try:
             professeur = Professeur.objects.get(pk=prof_id)

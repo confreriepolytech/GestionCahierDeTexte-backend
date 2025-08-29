@@ -30,7 +30,7 @@ class IsSecretary(permissions.BasePermission):
         return request.user.is_authenticated and request.user.groups.filter(name='secretaire').exists()"""
 
 
-
+#good
 class CahiertexteCreateView(generics.CreateAPIView):
     """
     Vue pour créer un cahier de texte.
@@ -46,6 +46,7 @@ class CahiertexteCreateView(generics.CreateAPIView):
 
 
 class CahiertexteListView(generics.ListAPIView):
+
     """
     Vue pour lister les cahiers de texte.
     Accessible à tous les utilisateurs authentifiés.
@@ -135,7 +136,7 @@ class CahierTexteDataAPIView(APIView):
 
         return Response(response_data, status=status.HTTP_200_OK)
 
-
+#good
 class SeanceCreateView(generics.CreateAPIView):
     serializer_class = SeanceCreateSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -147,17 +148,15 @@ class SeanceCreateView(generics.CreateAPIView):
         serializer = SeanceSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED) #to see later
 
-
+# good but not sure if it is working , self.get_object ???
 class SeanceUpdateView(generics.UpdateAPIView):
     queryset = Seance.objects.all()
     serializer_class = SeanceSerializer
     permission_classes = [permissions.IsAuthenticated]
+    http_method_names = ["patch"]
 
-    @extend_schema(tags=["Seances-de-classe"])
-    def put(self, request, *args, **kwargs):
-        return super().put(*args, **kwargs)
 
     @extend_schema(tags=["Seances-de-classe"])
     def patch(self, request, *args, **kwargs):
@@ -169,12 +168,16 @@ class SeanceUpdateView(generics.UpdateAPIView):
             # Autoriser uniquement la modification des chapitres pour les professeurs
             if request.user.role == 'Professeur':
                 allowed_fields = ['sous_session_seance']
+
                 for field in request.data.keys():
                     if field not in allowed_fields:
                         return Response(
                             {"detail": "Séance validée. Seul le contenu des chapitres peut être modifié."},
                             status=status.HTTP_403_FORBIDDEN
                         )
+                """serializer = self.serializer_class(instance , data=request.data, partial=True)
+                serializer.is_valid(raise_exception=True)
+                self.perform_update(serializer)"""
                 instance.sous_session_seance = request.data.get('sous_session_seance', instance.sous_session_seance)
                 instance.save()
                 return Response({"message": "Chapitres mis à jour avec succès."}, status=status.HTTP_200_OK)
@@ -183,11 +186,11 @@ class SeanceUpdateView(generics.UpdateAPIView):
                     {"detail": "Séance déjà validée. Modification interdite."},
                     status=status.HTTP_403_FORBIDDEN
                 )
+        else:
+            return Response({"error":"Validation non trouvé "}, status=status.HTTP_404_NOT_FOUND)
 
-        # Permettre les autres modifications pour les séances non validées
-        return super().patch(request, *args, **kwargs)
 
-
+# good but not sure if it is working , self.get_object ???
 class SeanceDeleteView(generics.DestroyAPIView):
     queryset = Seance.objects.all()
     serializer_class = SeanceSerializer
@@ -207,7 +210,7 @@ class SeanceDeleteView(generics.DestroyAPIView):
                     status=status.HTTP_403_FORBIDDEN
                 )
 
-        # Journalisation de la suppression
+        # Journalisation de la suppression , to see after
         print(f"Séance supprimée par {request.user.username} à {timezone.now()}")
 
         # Suppression de la séance
@@ -363,9 +366,44 @@ class ListeValidationView(APIView):
             return Response({"error": "Vous n'êtes pas un professeur."}, status=403)
 
 
-class DownloadPDFView(APIView):
 
-    @extend_schema(tags=["Cahier-de-texte"])
+
+
+
+class ConvertHTMLToPDFView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    @extend_schema(tags=["exportation-du-cahier-de-texte"])
+    def post(self, request, *args, **kwargs):
+        # Etape 1: Valider les données avec le serializer
+        serializer = HTMLUploadSerializer(data=request.data)
+        if serializer.is_valid():
+            html_file = serializer.validated_data['file']
+
+            # Etape 2: Lire le contenu du fichier HTML
+            html_content = html_file.read().decode('utf-8')
+
+            # Etape 3: Définir le chemin de stockage du PDF
+            pdf_folder = os.path.join(settings.MEDIA_ROOT, 'pdfs')
+            os.makedirs(pdf_folder, exist_ok=True)  # Créer le dossier s'il n'existe pas
+            pdf_path = os.path.join(pdf_folder, f"{os.path.splitext(html_file.name)[0]}.pdf")
+            # Etape 4: Convertir le HTML en PDF
+            try:
+                HTML(string=html_content).write_pdf(pdf_path)
+            except Exception as e:
+                return Response({"error": f"Erreur de conversion en PDF: {str(e)}"},
+                                status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            # Etape 5: Retourner le chemin du fichier PDF
+            return Response({
+                "message": "PDF généré avec succès",
+                "pdf_path": f"{settings.MEDIA_URL}pdfs/{os.path.basename(pdf_path)}"
+            }, status=status.HTTP_201_CREATED)
+            # En cas d'erreur de validation
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class DownloadPDFView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    @extend_schema(tags=["exportation-du-cahier-de-texte"])
     def get(self, request, filename):
         pdf_folder = os.path.join(settings.MEDIA_ROOT, 'pdfs')
         pdf_path = os.path.join(pdf_folder, filename)
@@ -396,34 +434,20 @@ class DownloadPDFView(APIView):
 # Vue pour lister et créer des UEs
 # C'est juste pour tester l'upload du fichier de cours (un fichier de cours est associé à une UE)
 # Peut etre modifié en cas de necessité
-class UeListCreateView(generics.ListCreateAPIView):
+#class UeListCreateView(generics.ListCreateAPIView):
+class UeListCreateView(generics.CreateAPIView):
     queryset = Ue.objects.all()
     serializer_class = UeSerializer
-
-    @extend_schema(tags=["UE"])
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
+    permission_classes = [permissions.IsAuthenticated]
 
     @extend_schema(tags=["UE"])
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
-
-class ClasseListCreateView(generics.ListCreateAPIView):
-    queryset = Classe.objects.all()
-    serializer_class = ClasseSerializer
-
-    @extend_schema(tags=["Classe"])
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
-
-    @extend_schema(tags=["Classe"])
-    def post(self, request, *args, **kwargs):
-        return super().post(request, *args, **kwargs)
-
 
 class UeDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ue.objects.all()
     serializer_class = UeSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
     @extend_schema(tags=["UE"])
     def get(self, request, *args, **kwargs):
@@ -449,20 +473,28 @@ class UeDetailView(generics.RetrieveUpdateDestroyAPIView):
         elif self.request.method == 'DELETE':
             return [IsSecretaireClasse(), IsProfesseur(), IsCustomAdmin()]"""
 
+class ClasseListCreateView(generics.ListCreateAPIView):
+    queryset = Classe.objects.all()
+    serializer_class = ClasseSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    @extend_schema(tags=["Classe"])
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    @extend_schema(tags=["Classe"])
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
+
+
+
+
 
 
 
 
 # -------------------------------------------fichier ue--------------------------------------------------
 
-
-class FichierUeListAPIView(APIView):  # Permet de lister tous les fichiers de cours
-
-    @extend_schema(tags=["UE"])
-    def get(self, request):
-        fichiers_ue = Fichier_Ue.objects.all()
-        serializer = FichierUeSerializer(fichiers_ue, many=True)
-        return Response(serializer.data)
 
 
 class FichierUeUploadAPIView(APIView):  # Permet l'upload des fichiers de cours
@@ -477,6 +509,15 @@ class FichierUeUploadAPIView(APIView):  # Permet l'upload des fichiers de cours
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+class FichierUeListAPIView(APIView):  # Permet de lister tous les fichiers de cours
+    #delete
+
+    @extend_schema(tags=["UE"])
+    def get(self, request):
+        fichiers_ue = Fichier_Ue.objects.all()
+        serializer = FichierUeSerializer(fichiers_ue, many=True)
+        return Response(serializer.data)
 
 class FichierUeDetailAPIView(APIView):  # Permet d'accéder à un fichier spécifique
 
@@ -506,40 +547,13 @@ class FichierUeDeleteAPIView(APIView):  # Permet de supprimer un fichier spécif
 
 # ----------------------------------------------Cahier de texte---------------------------------------------------------
 
-class ConvertHTMLToPDFView(APIView):
 
-    @extend_schema(tags=["UE"])
-    def post(self, request, *args, **kwargs):
-        # Etape 1: Valider les données avec le serializer
-        serializer = HTMLUploadSerializer(data=request.data)
-        if serializer.is_valid():
-            html_file = serializer.validated_data['file']
-
-            # Etape 2: Lire le contenu du fichier HTML
-            html_content = html_file.read().decode('utf-8')
-
-            # Etape 3: Définir le chemin de stockage du PDF
-            pdf_folder = os.path.join(settings.MEDIA_ROOT, 'pdfs')
-            os.makedirs(pdf_folder, exist_ok=True)  # Créer le dossier s'il n'existe pas
-            pdf_path = os.path.join(pdf_folder, f"{os.path.splitext(html_file.name)[0]}.pdf")
-            # Etape 4: Convertir le HTML en PDF
-            try:
-                HTML(string=html_content).write_pdf(pdf_path)
-            except Exception as e:
-                return Response({"error": f"Erreur de conversion en PDF: {str(e)}"},
-                                status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-            # Etape 5: Retourner le chemin du fichier PDF
-            return Response({
-                "message": "PDF généré avec succès",
-                "pdf_path": f"{settings.MEDIA_URL}pdfs/{os.path.basename(pdf_path)}"
-            }, status=status.HTTP_201_CREATED)
-            # En cas d'erreur de validation
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
 
 class ScheduleView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
 
     @extend_schema(tags=["UE"])
     def get(self,request,  classe_id):

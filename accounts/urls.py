@@ -1,7 +1,7 @@
 from django.urls import path
 
 from accounts.views import UserRegistrationView, LoginView, LogoutView, PasswordTokenCheckAPIView, RequestPasswordReset, \
-    SetNewPasswordAPIView, VerifyEmailView, GoogleSocialAuthView
+    SetNewPasswordAPIView, VerifyEmailView, GoogleSocialAuthView, MyTokenRefreshView
 from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
@@ -10,7 +10,7 @@ urlpatterns = [
     path('users/registration/Google/', GoogleSocialAuthView.as_view(), name='user-registration-google'),
     path('users/login/', LoginView.as_view(), name='user-login'),
     path('users/logout/', LogoutView.as_view(), name='user-logout'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('token/refresh/', MyTokenRefreshView.as_view(), name='token_refresh'),
 
     path('users/email-verify/', VerifyEmailView.as_view(), name='user-email-verify'),
     path('request-reset-password/', RequestPasswordReset.as_view(), name='request-password-reset'),

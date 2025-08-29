@@ -1,6 +1,7 @@
 from drf_spectacular.utils import extend_schema
 from jsonschema.exceptions import ValidationError
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
+from rest_framework_simplejwt.views import TokenRefreshView
 
 from accounts.models import Professeur, SecretaireClasse, SecretaireGeneral
 from accounts.permissions import IsSecretaireGeneral
@@ -23,7 +24,7 @@ from accounts.serializers import UserRegistrationSerializer, ResetPasswordEmailR
     SetNewPasswordSerializer, LoginSerializer, LogoutSerializer, GoogleSocialAuthSerializer, \
     PasswordTokenCheckSerializer, VerifyEmailSerializer, ProfesseurSerializer
 from django.contrib.auth import login, authenticate, get_user_model
-from rest_framework import status, views, generics
+from rest_framework import status, views, generics, permissions
 from rest_framework.decorators import permission_classes, api_view
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -137,13 +138,16 @@ class LoginView(views.APIView):
 
 
 
+class MyTokenRefreshView(TokenRefreshView):
 
-
+    @extend_schema(tags=['Auth'])
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
 
 class LogoutView(generics.GenericAPIView):
     """ logout view , required user is authenticated """
 
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = [IsAuthenticated]
     serializer_class = LogoutSerializer
 
     @extend_schema(tags=['Auth'])
@@ -238,6 +242,7 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
 
 class UploadSignatureAPIView(APIView):
     parser_classes = (MultiPartParser, FormParser)
+    permission_classes = [permissions.IsAuthenticated]
 
     @extend_schema(tags=['Auth'])
     def post(self, request, prof_id):

@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404
-from jsonschema.exceptions import ValidationError
+
 from rest_framework import serializers # Carlos tu te rappelle de ce dont je te parlait la derniere fois la c'est sa qui se repete ici de mme que dans ton serializer de accounts
+from rest_framework.exceptions import ValidationError
 
 from accounts.models import Seance, Cahiertexte, SecretaireClasse, Fichier_Ue, Ue, Classe, Validation
 
@@ -26,7 +27,9 @@ class SeanceCreateSerializer(serializers.ModelSerializer):
       id_ue = attrs.get("id_ue")
 
       if Seance.objects.filter(id_classe=cahier.id_classe, id_ue=id_ue, date_heure=date).exists():
-          raise ValidationError("Une séance pour cette classe, UE, et date existe déjà.")
+          raise ValidationError("Une séance pour cette classe, UE, et date existe déjà.", 400)
+
+      return attrs
 
   def create(self, validated_data):
       cahier_id = validated_data.get("cahier_id")
@@ -43,13 +46,16 @@ class SeanceCreateSerializer(serializers.ModelSerializer):
                             id_ue=id_ue,
                             id_classe=id_classe)
 
-      Validation.objects.create(
+      validation = Validation.objects.create(
           id_cahier=cahier_id,
           id_professeur=seance.id_professeur,
           id_ues=seance.id_ue,
           id_seance=seance,
           statut="non validé"
       )
+      validated_data["validation_id"] = validation.id_validation
+      return seance
+
   class Meta:
     model = Seance
     fields = '__all__'
@@ -66,20 +72,21 @@ class CahiertexteSerializer(serializers.ModelSerializer):
   id_secretaire = serializers.PrimaryKeyRelatedField(queryset=SecretaireClasse.objects.all())
   seances = SeanceSerializer(many=True, read_only=True)  # Afficher les séances liées au cahier
 
+  def validate(self, data):
+      # Logique pour vérifier si un cahier existe déjà pour la classe et le secrétaire
+      id_classe = data.get('id_classe')
+      id_secretaire = data.get('id_secretaire')
+
+      if Cahiertexte.objects.filter(id_classe=id_classe, id_secretaire=id_secretaire).exists():
+          raise serializers.ValidationError("Un cahier de texte pour cette classe et ce secrétaire existe déjà.")
+
+      return data
+
   class Meta:
     model = Cahiertexte
     fields = '__all__'
 
 
-def validate(self, data):
-  # Logique pour vérifier si un cahier existe déjà pour la classe et le secrétaire
-  id_classe = data.get('id_classe')
-  id_secretaire = data.get('id_secretaire')
-
-  if Cahiertexte.objects.filter(id_classe=id_classe, id_secretaire=id_secretaire).exists():
-    raise serializers.ValidationError("Un cahier de texte pour cette classe et ce secrétaire existe déjà.")
-
-  return data
 
 
 
@@ -89,12 +96,35 @@ def validate(self, data):
 
 
 class UeSerializer(serializers.ModelSerializer):
+
+    def validate(self, attrs):
+        code_UEs = attrs.get('code_UEs')
+        intitule_UEs = attrs.get('intitule_UEs')
+        id_prof = attrs.get('id_prof')
+        classe = attrs.get('classe')
+
+        if Ue.objects.filter(code_UEs=code_UEs,intitule_UEs=intitule_UEs,id_classe=classe, d_prof=id_prof).exists():
+            raise ValidationError("cette Ue existe déjà")
+
+        return attrs
+
     class Meta:
         model = Ue
         fields = '__all__'
 
 
 class ClasseSerializer(serializers.ModelSerializer):
+
+    def validate(self, attrs):
+        nom_licence = attrs.get('nom_licence')
+        niveau = attrs.get('niveau')
+        departement = attrs.get('departement')
+        mention = attrs.get('mention')
+
+        if Classe.objects.filter(nom_licence=nom_licence, niveau=niveau, departement=departement, mention=mention).exists():
+            raise ValidationError("cette classe existe déjà", 400)
+
+        return attrs
     class Meta:
         model = Classe
         fields = '__all__'

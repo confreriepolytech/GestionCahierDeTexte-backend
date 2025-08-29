@@ -2,21 +2,6 @@ import os
 import sys
 import django
 
-# 1. Calculate the correct base directory
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-# 2. Add the project root to Python path
-sys.path.insert(0, BASE_DIR)
-
-# 3. Set Django settings module
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "GestionCahierDeTexte3.settings")
-
-# 4. Initialize Django
-try:
-    django.setup()
-except Exception as e:
-    print(f"Error setting up Django: {e}")
-    sys.exit(1)
 
 
 

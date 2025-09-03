@@ -96,7 +96,7 @@ class GoogleSocialAuthView(generics.GenericAPIView):
 
     serializer_class =  GoogleSocialAuthSerializer
 
-    @extend_schema(tags=['Auth'])
+    @extend_schema(tags=['social_Auth'])
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -118,7 +118,7 @@ class VerifyEmailView(generics.GenericAPIView):
         user = serializer.context.get('user')
         if  user and not user.is_verified:
             user.is_verified = True
-            user.save(update_field=['is_verified'])
+            user.save(update_fields=['is_verified'])
 
         return Response({"email successfully verified !"}, status=status.HTTP_200_OK)
 

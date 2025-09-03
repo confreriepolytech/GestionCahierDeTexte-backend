@@ -170,8 +170,9 @@ DATABASES = {
         'USER': os.environ.get('DB_USER'), # votre nom d'utilisateur
         'PASSWORD':  os.environ.get('DB_PASSWORD'), #votre mot de passe
         'HOST': os.environ.get('DB_HOST'),
-        'PORT':  os.environ.get('DB_PORT',3306),       # Port of the database, by default 3306 
+        'PORT':  os.environ.get('DB_PORT'),       # Port of the database, by default 3306
     } }
+
 """
 DATABASES = {
     'default': {

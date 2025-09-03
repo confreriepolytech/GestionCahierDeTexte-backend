@@ -179,7 +179,7 @@ class Seance(models.Model):
     id_professeur = models.ForeignKey("accounts.Professeur", on_delete=models.CASCADE, db_column='id_professeur', blank=True, null=True)
     #id_ues = models.ForeignKey('CahierDeTexte.Ue', on_delete=models.CASCADE, db_column='id_UEs', blank=True, null=True)  # Field name made lowercase.
     sous_session_seance = models.CharField(max_length=1000,blank=False, null=False)
-    id_classe = models.ForeignKey("accounts.classe", on_delete=models.CASCADE, db_column='id_classe', blank=True, null=True)
+    id_classe = models.ForeignKey("accounts.Classe", on_delete=models.CASCADE, db_column='id_classe', blank=True, null=True)
     id_ues = models.ForeignKey("accounts.Ue", on_delete=models.CASCADE, db_column='id_UEs')
     date_heure = models.DateTimeField(null=False, blank=False, db_index=True)
 

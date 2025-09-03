@@ -416,4 +416,4 @@ class SecretaireClasseSerializer(BaseUserSerializer):
 class ProfesseurSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
         model = Professeur
-        ields = BaseUserSerializer.Meta.fields + ['signature']
+        fields = BaseUserSerializer.Meta.fields + ['signature']

@@ -65,7 +65,9 @@ class UserRegistrationView(APIView):
             'message': 'successful registration ! ',
             'user_id': user.id,
             'email': user.email,
-            'role': user.role
+            'nom':user.nom,
+            'prenom':user.prenom,
+            'role': user.role,
         }
 
 
@@ -76,6 +78,7 @@ class UserRegistrationView(APIView):
             response_data['professeur_id'] = user.professeur.id
         elif user.role == 'secretaire_general':
             response_data['secretaire_general_id'] = user.secretairegeneral.id
+            response_data['secretaire_general_departement']= user.secretairegeneral.departement
         elif user.role == 'secretaire_classe':
             response_data['secretaire_classe_id'] = user.secretaireclasse.id
         else:

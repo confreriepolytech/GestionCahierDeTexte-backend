@@ -252,7 +252,7 @@ class LoginSerializer(serializers.ModelSerializer):
 
     def get_tokens(self,obj):
         user = self.context['user']
-
+        #user = User.objects.get(email= obj.email)
         return{
             'access_token': user.tokens()['access_token'],
             'refresh_token': user.tokens()['refresh_token'],
@@ -278,7 +278,7 @@ class LoginSerializer(serializers.ModelSerializer):
             raise AuthenticationFailed('Invalid credentials , try again or please contact admin.')
         if not user.is_active:
             # this condition is never fulfilled actually because the default authenticate model
-            # return none if the user property is_active == False
+            # return none if the user's property is_active == False
 
             raise AuthenticationFailed('Account is disabled. contact admin')
         if not  user.is_verified:
@@ -287,17 +287,12 @@ class LoginSerializer(serializers.ModelSerializer):
         user.last_login = timezone.now()
         user.save(update_fields=['last_login'])
 
-        return {
-            'email': user.email,
-            'password': password,
-             'user_role': user.role,
-            #'username': user.username,
-            'tokens':user.tokens()
-        }
+        return attrs
 
     class Meta:
         model = User
         fields = ['id', 'email', 'password', 'tokens',]
+
 
 
 class LogoutSerializer(serializers.Serializer):

@@ -137,7 +137,29 @@ class LoginView(views.APIView):
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        return Response(serializer.validated_data, status=status.HTTP_200_OK)
+        user = serializer.context.get('user')
+
+        response_data = {
+            'user_id': user.id,
+            'email': user.email,
+            'nom': user.nom,
+            'prenom': user.prenom,
+            'role': user.role,
+            'tokens':user.tokens()
+        }
+
+        # Add role-specific information( ID , .....)  in the response  data
+        if user.role == 'professeur':
+            response_data['has_signature'] = user.professeur.has_signature  # Add signature status for professeur
+            # here maybe I should make a try catch to verify if role-specific user exist
+            response_data['professeur_id'] = user.professeur.id
+        elif user.role == 'secretaire_general':
+            response_data['secretaire_general_id'] = user.secretairegeneral.id
+            response_data['secretaire_general_departement'] = user.secretairegeneral.departement
+        elif user.role == 'secretaire_classe':
+            response_data['secretaire_classe_id'] = user.secretaireclasse.id
+
+        return Response(response_data, status=status.HTTP_200_OK)
 
 
 

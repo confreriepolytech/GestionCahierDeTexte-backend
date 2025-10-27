@@ -93,7 +93,8 @@ class SecretaireGeneral(models.Model):
         #managed = False
         db_table = 'secretairegeneral'
 
-
+    def __str__(self):
+        return f"{self.user_id.nom}-{self.user_id.prenom} departement: {self.departement}"
 
 class Professeur(models.Model):
     user_id = models.OneToOneField("accounts.CustomUser", on_delete=models.CASCADE, db_index=True)
@@ -133,6 +134,9 @@ class Classe(models.Model):
                                choices=[('LF', 'Licence Fondamentale'),
                                         ('LP', 'Licence Professionelle')],
                                blank=False, null=False)
+
+    schedule = models.FileField(upload_to='emploi_du_temps', blank=True , null=True)
+
     class Meta:
         #managed = False
         verbose_name = 'classe'
@@ -154,7 +158,8 @@ class SecretaireClasse(models.Model):
         #managed = False
         db_table = 'secretaireclasse'
 
-
+    def __str__(self):
+        return f"{self.user_id.nom}-{self.user_id.prenom} classe: {self.id_classe.nom_licence}"
 
 
 
@@ -189,8 +194,10 @@ class Seance(models.Model):
 
 class Cahiertexte(models.Model):
     id_cahier = models.AutoField(primary_key=True)
-    id_classe = models.ForeignKey("accounts.Classe", on_delete=models.CASCADE, db_column='id_classe')
-    id_secretaire = models.ForeignKey("accounts.SecretaireClasse", on_delete=models.CASCADE, db_column='id_secretaire')
+    id_classe = models.ForeignKey("accounts.Classe", on_delete=models.CASCADE, db_column='id_classe',
+                                  unique=True)
+    id_secretaire = models.ForeignKey("accounts.SecretaireClasse", on_delete=models.CASCADE,
+                                      db_column='id_secretaire')
 
     date_de_creation = models.DateTimeField(auto_now_add=True)# la date de creation
     date_de_mise_a_jour = models.DateTimeField(auto_now=True)# date de mise a jour
@@ -216,9 +223,14 @@ class Validation(models.Model):
     id_ues = models.ForeignKey("accounts.Ue", on_delete=models.CASCADE, db_column='id_UEs')
     statut = models.CharField(max_length=11 , choices=STATUS_CHOICES, blank=False, null=False, db_index=True)
     id_seance = models.ForeignKey(Seance, on_delete=models.CASCADE, db_column='id_seance',)
-    date_validation = models.DateTimeField(null=False, blank=False)
+    date_validation = models.DateTimeField(null=True)
     #signature = models.ImageField(upload_to='validations/',blank=True, null=True)
 
+    def save(self, *args, **kwargs):
+        if self.statut == 'valide' and not self.date_validation:
+            self.date_validation = timezone.now()
+
+        super().save(*args, **kwargs)
     class Meta:
         #managed = False
         db_table = 'validation'

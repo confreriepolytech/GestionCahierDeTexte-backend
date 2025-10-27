@@ -2,7 +2,7 @@
 import os
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import generics, permissions, status
 from django.http import FileResponse
 from django.conf import settings
@@ -15,7 +15,7 @@ from accounts.permissions import IsSecretaireClasse, IsProfesseur, IsCustomAdmin
 #from ues.serializers import UeSerializer
 #from GestionCahierDeTexte import settings
 from .serializers import CahiertexteSerializer, SeanceSerializer, FichierUeSerializer, HTMLUploadSerializer, \
-    UeSerializer, ClasseSerializer, SeanceCreateSerializer
+    UeSerializer, ClasseSerializer, SeanceCreateSerializer, SeanceDetailsSerialiser, ClasseScheduleSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 #from .models import Cahiertexte, Validation, Seance, Fichier_Ue, Ue
@@ -136,18 +136,68 @@ class CahierTexteDataAPIView(APIView):
 
         return Response(response_data, status=status.HTTP_200_OK)
 
+
+
+"""@extend_schema(
+    request=SeanceDetailsSerialiser,
+    responses=SeanceDetailsSerialiser,
+)"""
+
+
+class SeanceDetailsView(APIView):
+    serializer_class = SeanceDetailsSerialiser
+    #permission_classes = [permissions.IsAuthenticated]
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter("mention", str, OpenApiParameter.PATH, description="mention"),
+            OpenApiParameter("nom_classe", str, OpenApiParameter.PATH, description="Class name"),
+            OpenApiParameter("code_ue", str, OpenApiParameter.PATH, description="UE code"),
+
+        ],
+        tags=["Seances-de-classe"]
+    )
+    def get(self, request, mention, nom_classe, code_ue):
+
+        serializer = self.serializer_class(data={"mention":mention, "nom_classe":nom_classe, "code_ue":code_ue})
+        serializer.is_valid(raise_exception=True)
+
+        ue = serializer.validated_data.get("ue")
+        classe = serializer.validated_data.get("classe")
+        data = {
+            "seances":
+            {
+                "id": seance.id_seance,
+                "date_heure": seance.date_heure,
+                "contenu": seance.sous_session_seance,
+                "statut": "validé" if Validation.objects.filter(id_seance=seance,
+                                                                statut="validé").exists() else "non validé",
+                "validation": {
+                    "statut": validation.statut,
+                    "date_validation": validation.date_validation,
+                    "signature": validation.id_professeur.signature.url if validation.statut == "validé" else "La séance n’a pas encore été validée par le professeur."
+                } if (validation := Validation.objects.filter(id_seance=seance).first()) else None,
+            }
+            for seance in Seance.objects.filter(id_classe=classe, id_ues=ue)
+        }
+        if not data:
+            data = {"message": f"there is no seance for UE {ue} "}
+
+        return Response(data, status=status.HTTP_200_OK)
 #good
 class SeanceCreateView(generics.CreateAPIView):
     serializer_class = SeanceCreateSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
+
+
 
     @extend_schema(tags=["Seances-de-classe"])
     def post(self, request, *args, **kwargs):
 
 
-        serializer = SeanceSerializer(data=request.data)
+        serializer = SeanceCreateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-
+        serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED) #to see later
 
 # good but not sure if it is working , self.get_object ???
@@ -194,7 +244,7 @@ class SeanceUpdateView(generics.UpdateAPIView):
 class SeanceDeleteView(generics.DestroyAPIView):
     queryset = Seance.objects.all()
     serializer_class = SeanceSerializer
-    permission_classes = [permissions.IsAuthenticated,]
+    #permission_classes = [permissions.IsAuthenticated,]
 
     @extend_schema(tags=["Seances-de-classe"])
     def delete(self, request, *args, **kwargs):
@@ -435,19 +485,26 @@ class DownloadPDFView(APIView):
 # C'est juste pour tester l'upload du fichier de cours (un fichier de cours est associé à une UE)
 # Peut etre modifié en cas de necessité
 #class UeListCreateView(generics.ListCreateAPIView):
-class UeListCreateView(generics.CreateAPIView):
+"""class UeListCreateView(generics.CreateAPIView):
     queryset = Ue.objects.all()
     serializer_class = UeSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
+
+
 
     @extend_schema(tags=["UE"])
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
 
+    def get(self, request, classe):
+        pass
+
+
+
 class UeDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ue.objects.all()
     serializer_class = UeSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
 
     @extend_schema(tags=["UE"])
     def get(self, request, *args, **kwargs):
@@ -464,14 +521,14 @@ class UeDetailView(generics.RetrieveUpdateDestroyAPIView):
     def delete(self, request, *args, **kwargs):
         return super().patch(request, *args, **kwargs)
 
-    """def get_permissions(self):
+    def get_permissions(self):
 
         if self.request.method == 'POST':
             return [IsSecretaireClasse(), IsProfesseur(), IsCustomAdmin()]
         elif self.request.method == 'PUT':
             return [IsSecretaireClasse(), IsProfesseur(), IsCustomAdmin()]
         elif self.request.method == 'DELETE':
-            return [IsSecretaireClasse(), IsProfesseur(), IsCustomAdmin()]"""
+            return [IsSecretaireClasse(), IsProfesseur(), IsCustomAdmin()]
 
 class ClasseListCreateView(generics.ListCreateAPIView):
     queryset = Classe.objects.all()
@@ -480,13 +537,79 @@ class ClasseListCreateView(generics.ListCreateAPIView):
 
     @extend_schema(tags=["Classe"])
     def get(self, request, *args, **kwargs):
+        
         return super().get(request, *args, **kwargs)
 
     @extend_schema(tags=["Classe"])
     def post(self, request, *args, **kwargs):
-        return super().post(request, *args, **kwargs)
+        return super().post(request, *args, **kwargs)"""
 
 
+
+
+# 🧩 LIST + CREATE UE
+@extend_schema(tags=["UEs"])
+class UeListCreateView(generics.ListCreateAPIView):
+    serializer_class = UeSerializer
+    queryset = Ue.objects.all()
+
+    """def get_permissions(self):
+        if self.request.method == 'GET':
+            permission_classes = [CanListUe]
+        elif self.request.method == 'POST':
+            permission_classes = [CanCreateUe]
+        else:
+            permission_classes = [permissions.IsAuthenticated]
+        return [p() for p in permission_classes]"""
+
+    @extend_schema(
+        description="List all UEs of a given class (by nom_classe).",
+        parameters=[],
+        responses=UeSerializer(many=True),
+    )
+    def get(self, request, *args, **kwargs):
+        nom_classe = kwargs.get('nom_classe')
+        mention = kwargs.get('mention')
+        classe = get_object_or_404(Classe, nom_licence=nom_classe, mention=mention)
+
+        queryset = Ue.objects.filter(classe=classe)
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
+    @extend_schema(
+        description="Create a UE linked to a specific class (by nom_classe).",
+        request=UeSerializer,
+        responses=UeSerializer,
+    )
+    def post(self, request, *args, **kwargs):
+        nom_classe = kwargs.get('nom_classe')
+        mention = kwargs.get('mention')
+        classe = get_object_or_404(Classe, nom_licence=nom_classe, mention=mention)
+        data = request.data.copy()
+        data['classe'] = classe.id_classe
+        serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+# 🧩 RETRIEVE + UPDATE + DELETE UE
+@extend_schema(tags=["UEs"])
+class UeDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = UeSerializer
+    lookup_field = 'code_UEs'
+    queryset = Ue.objects.all()
+
+    """def get_permissions(self):
+        if self.request.method == 'GET':
+            permission_classes = [CanRetrieveUe]
+        elif self.request.method == 'PUT' or self.request.method == 'PATCH':
+            permission_classes = [CanUpdateUe]
+        elif self.request.method == 'DELETE':
+            permission_classes = [CanDeleteUe]
+        else:
+            permission_classes = [permissions.IsAuthenticated]
+        return [p() for p in permission_classes]"""
 
 
 
@@ -552,12 +675,13 @@ class FichierUeDeleteAPIView(APIView):  # Permet de supprimer un fichier spécif
 
 
 
-class ScheduleView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+"""class ScheduleView(APIView):
+    #permission_classes = [permissions.IsAuthenticated]
 
     @extend_schema(tags=["UE"])
     def get(self,request,  classe_id):
         classe = get_object_or_404(Classe, id=classe_id)
+
         ue_list = Ue.objects.filter(classe=classe)
         data = {}
 
@@ -565,6 +689,37 @@ class ScheduleView(APIView):
             data[ue.code_UEs] = {"crenaux":ue.crenaux}
 
         return Response(data, status=status.HTTP_200_OK)
+
+    def post(self, request, nom_classe):
+        c"""
+
+@extend_schema(tags=["Emploi-du-temps"])
+class ClasseScheduleView(generics.GenericAPIView):
+    serializer_class = ClasseScheduleSerializer
+
+    @extend_schema(
+        description="Get the schedule (PDF) of a class by its name (nom_licence).",
+        responses=ClasseScheduleSerializer,
+    )
+    def get(self, request, *args, **kwargs):
+        nom_classe = kwargs.get("nom_classe")
+        classe = get_object_or_404(Classe, nom_licence=nom_classe)
+        serializer = self.get_serializer(classe)
+        return Response(serializer.data)
+
+    @extend_schema(
+        description="Upload or update the schedule (PDF) of a class by its name (nom_licence).",
+        request=ClasseScheduleSerializer,
+        responses=ClasseScheduleSerializer,
+    )
+    def put(self, request, *args, **kwargs):
+        nom_classe = kwargs.get("nom_classe")
+        classe = get_object_or_404(Classe, nom_licence=nom_classe)
+
+        serializer = self.get_serializer(classe, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 

@@ -396,19 +396,21 @@ class SetNewPasswordSerializer(serializers.Serializer):
 
 class BaseUserSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ['user_id', 'nom', 'prenom','role', 'email']  # Champs communs aux users
+        fields =  ['nom', 'prenom','role', 'email']  # Champs communs aux users
 
 class SecretaireGeneralSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
         model = SecretaireGeneral
-        fields = BaseUserSerializer.Meta.fields + ['departement']
+        #fields = BaseUserSerializer.Meta.fields + ['departement']
+        fields = '__all__'
 
 class SecretaireClasseSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
         model = SecretaireClasse
-        fields = BaseUserSerializer.Meta.fields # + ['champ_specifique_user2']
-
+        #fields = BaseUserSerializer.Meta.fields # + ['champ_specifique_user2']
+        fields = '__all__'
 class ProfesseurSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
         model = Professeur
-        fields = BaseUserSerializer.Meta.fields + ['signature']
+        #fields = BaseUserSerializer.Meta.fields + ['signature']
+        fields = '__all__'

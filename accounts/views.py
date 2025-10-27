@@ -282,3 +282,15 @@ class UploadSignatureAPIView(APIView):
             return Response({"message": "Signature téléversée avec succès", "data": serializer.data},
                             status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+class ListProfesseur(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = ProfesseurSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    @extend_schema(tags=['Auth'])
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
